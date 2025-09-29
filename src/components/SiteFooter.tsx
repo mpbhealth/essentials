@@ -116,7 +116,7 @@ export function SiteFooter() {
         className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-r from-accent-500/10 to-brand-500/10 rounded-full blur-2xl"
       />
 
-      <div className='relative mx-auto max-w-7xl px-4 py-16'>
+      <div className='relative mx-auto max-w-screen-2xl px-4 py-16'>
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -383,32 +383,6 @@ export function SiteFooter() {
               ))}
             </nav>
           </div>
-          
-          {/* Premium Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="text-center mt-6"
-          >
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-500/20 to-accent-500/20 border border-white/20 rounded-2xl px-6 py-3">
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              >
-                <Zap className="w-4 h-4 text-brand-400" />
-              </motion.div>
-              <span className="text-sm font-bold text-slate-300">
-                Powered by championship-level healthcare innovation
-              </span>
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-2 h-2 bg-accent-400 rounded-full"
-              />
-            </div>
-          </motion.div>
         </motion.div>
       </div>
       
