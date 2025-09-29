@@ -1,4 +1,5 @@
 import React from 'react'
+'use client'
 import { motion } from 'framer-motion'
 import { Card, CardBody } from '@/components/ui/Card'
 import { StrategicLink, RelatedLinks } from '@/components/InternalLinking'
