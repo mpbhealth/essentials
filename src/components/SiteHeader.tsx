@@ -44,7 +44,7 @@ export function SiteHeader() {
           >
            <div className='relative group-hover:scale-105 transition-transform duration-300'>
              <img 
-               src="https://mpb.health/wp-content/uploads/2025/05/MPB-Health-No-background.png"
+              src="/MPB-Health-No-background.png"
                alt="MPB Health"
                className='h-8 md:h-10 w-auto object-contain'
              />
