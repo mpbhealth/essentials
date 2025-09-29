@@ -1,7 +1,8 @@
 'use client'
+
 import React from 'react'
-import { Button } from '@/components/ui/Button'        // adjust path if different
-import { GhostButton } from '@/components/ui/Button'   // or export both from same file
+import { Button } from '@/components/ui/Button'
+import { GhostButton } from '@/components/ui/Button'
 import { enrollClick } from '@/lib/track'
 import { price, pitch } from '@/data/essentials'
 
@@ -55,7 +56,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    }
     </section>
   )
 }
