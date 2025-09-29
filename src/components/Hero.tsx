@@ -226,6 +226,54 @@ export function Hero() {
                 <span className="font-medium">10,000+ members</span>
               </div>
             </motion.div>
+
+            {/* Championship Stats Section */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6"
+            >
+              {[
+                { icon: Users, value: '10K+', label: 'Members', color: 'from-blue-500 to-cyan-500', bgColor: 'bg-blue-50' },
+                { icon: Star, value: '4.9', label: 'Rating', color: 'from-yellow-500 to-orange-500', bgColor: 'bg-yellow-50' },
+                { icon: Clock, value: '24/7', label: 'Access', color: 'from-green-500 to-emerald-500', bgColor: 'bg-green-50' },
+                { icon: Shield, value: '100%', label: 'Secure', color: 'from-purple-500 to-indigo-500', bgColor: 'bg-purple-50' }
+              ].map((stat, i) => {
+                const Icon = stat.icon
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.1 + 1 }}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="text-center group"
+                  >
+                    <div className={`glass border border-white/30 rounded-3xl p-6 backdrop-blur-xl bg-white/80 hover:bg-white/90 transition-all duration-300 group-hover:shadow-xl relative overflow-hidden`}>
+                      {/* Background Pattern */}
+                      <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 ${stat.bgColor}`} />
+                      
+                      {/* Icon */}
+                      <motion.div
+                        whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
+                        className={`w-12 h-12 mx-auto mb-3 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg flex items-center justify-center group-hover:shadow-xl transition-shadow duration-300`}
+                      >
+                        <Icon className="w-6 h-6 text-white" />
+                      </motion.div>
+                      
+                      {/* Stats */}
+                      <div className="relative z-10">
+                        <div className="text-2xl md:text-3xl font-black text-slate-900 mb-1">{stat.value}</div>
+                        <div className="text-sm font-medium text-slate-600">{stat.label}</div>
+                      </div>
+
+                      {/* Hover Glow Effect */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`} />
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
           </div>
 
           {/* Right Side - Interactive Visual */}
@@ -311,6 +359,44 @@ export function Hero() {
               </div>
             </div>
           </motion.div>
+        </motion.div>
+
+        {/* Championship Trust Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2, duration: 0.8 }}
+          className="mt-16 flex flex-wrap items-center justify-center gap-8 lg:gap-12"
+        >
+          {[
+            { icon: Shield, label: 'HIPAA Secure', color: 'text-blue-500', bgColor: 'bg-blue-50' },
+            { icon: Clock, label: '24/7 Available', color: 'text-green-500', bgColor: 'bg-green-50' },
+            { icon: Users, label: 'Expert Team', color: 'text-purple-500', bgColor: 'bg-purple-50' },
+            { icon: Award, label: 'Premium Care', color: 'text-orange-500', bgColor: 'bg-orange-50' }
+          ].map((trust, i) => {
+            const Icon = trust.icon
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: i * 0.15 + 2.2 }}
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center gap-3 group"
+              >
+                <motion.div
+                  whileHover={{ rotate: [0, -5, 5, 0], scale: 1.2 }}
+                  transition={{ duration: 0.5 }}
+                  className={`w-10 h-10 rounded-xl ${trust.bgColor} shadow-lg flex items-center justify-center group-hover:shadow-xl transition-shadow duration-300`}
+                >
+                  <Icon className={`w-5 h-5 ${trust.color}`} />
+                </motion.div>
+                <span className="font-bold text-slate-700 group-hover:text-slate-900 transition-colors">
+                  {trust.label}
+                </span>
+              </motion.div>
+            )
+          })}
         </motion.div>
       </div>
     </section>
