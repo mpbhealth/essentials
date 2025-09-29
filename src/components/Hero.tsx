@@ -26,7 +26,7 @@ export function Hero() {
           </h1>
           <p className="mt-4 text-lg text-slate-700">
             {pitch?.sub ??
-              'Unlimited $0 virtual care plus expert concierge help and smart savings—so you can handle life's health moments quickly and affordably.'}
+              'Unlimited $0 virtual care plus expert concierge help and smart savings—so you can handle life\'s health moments quickly and affordably.'}
           </p>
 
           <div className="mt-6 flex items-center gap-3">
@@ -55,6 +55,7 @@ export function Hero() {
           </div>
         </div>
       </div>
+    }
     </section>
   )
 }
