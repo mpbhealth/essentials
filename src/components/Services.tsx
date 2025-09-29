@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Card, CardBody } from '@/components/ui/Card'
+import { StrategicLink } from '@/components/InternalLinking'
 import { services } from '@/data/essentials'
 import { 
   Stethoscope, 
@@ -311,7 +312,44 @@ export function Services() {
           transition={{ duration: 0.6, delay: 1 }}
           className="text-center mt-20"
         >
-          <div className="inline-flex items-center gap-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-2xl px-8 py-4 shadow-lg">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-4 bg-white/60 backdrop-blur-sm border border-white/30 rounded-2xl px-8 py-4 shadow-lg">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-sm font-medium text-slate-600">All services available instantly</span>
+              </div>
+              <div className="w-px h-4 bg-slate-300" />
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-brand-500" />
+                <span className="text-sm font-medium text-slate-600">24/7/365 access</span>
+              </div>
+            </div>
+            
+            {/* Strategic Internal Links */}
+            <div className="flex flex-wrap justify-center gap-4">
+              <StrategicLink 
+                href="/#pricing" 
+                variant="button"
+                className="text-sm"
+              >
+                View Pricing Plans
+              </StrategicLink>
+              
+              <StrategicLink 
+                href="/#how-it-works"
+                variant="inline"
+                className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-brand-600"
+              >
+                Learn how it works
+                <ArrowRight className="w-4 h-4" />
+              </StrategicLink>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="text-sm font-medium text-slate-600">All services available instantly</span>

@@ -2,6 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardBody } from '@/components/ui/Card'
+import { StrategicLink, RelatedLinks } from '@/components/InternalLinking'
 import { bullets } from '@/data/essentials'
 import { Clock, Heart, Brain, Users, Pill, Leaf, QrCode, Shield, Dog, CreditCard, CircleCheck as CheckCircle, Sparkles } from 'lucide-react'
 
@@ -156,9 +157,40 @@ export function FeatureGrid() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <div className="inline-flex items-center gap-2 text-slate-600 bg-white/60 backdrop-blur-sm border border-white/30 rounded-full px-6 py-3 shadow-lg">
-            <Sparkles className="w-4 h-4 text-brand-500" />
-            <span className="text-sm font-medium">All benefits included in your membership</span>
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-2 text-slate-600 bg-white/60 backdrop-blur-sm border border-white/30 rounded-full px-6 py-3 shadow-lg">
+              <Sparkles className="w-4 h-4 text-brand-500" />
+              <span className="text-sm font-medium">All benefits included in your membership</span>
+            </div>
+            
+            {/* Related Content Links */}
+            <div className="max-w-4xl mx-auto">
+              <RelatedLinks
+                title="Learn More About Your Benefits"
+                links={[
+                  {
+                    href: "/#pricing",
+                    text: "View Membership Pricing",
+                    description: "Transparent pricing for all Essentials benefits"
+                  },
+                  {
+                    href: "/#how-it-works", 
+                    text: "How to Get Started",
+                    description: "Simple 3-step enrollment process"
+                  },
+                  {
+                    href: "/#services",
+                    text: "Virtual Healthcare Services", 
+                    description: "24/7 urgent care, primary care, and mental health"
+                  },
+                  {
+                    href: "/#faq",
+                    text: "Frequently Asked Questions",
+                    description: "Common questions about membership benefits"
+                  }
+                ]}
+              />
+            </div>
           </div>
         </motion.div>
       </div>

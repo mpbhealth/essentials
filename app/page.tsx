@@ -13,6 +13,7 @@ import { Testimonials } from '@/components/Testimonials';
 import { LeadForm } from '@/components/LeadForm';
 import { CookieBanner } from '@/components/CookieBanner';
 import { JotformAgent } from '@/components/JotformAgent';
+import { NavigationSchema } from '@/components/InternalLinking';
 
 export default function Page() {
   const productLd = {
@@ -27,6 +28,7 @@ export default function Page() {
   return (
     <main id='main'>
       <script type='application/ld+json' dangerouslySetInnerHTML={{__html: JSON.stringify(productLd)}} />
+      <NavigationSchema />
       <SiteHeader />
       <Hero />
       <Services />
