@@ -253,4 +253,80 @@ export function Hero() {
                       <Icon className="w-5 h-5 text-white" />
                     </motion.div>
                     <div className="text-center">
+                      <span className="text-2xl font-black text-slate-900 group-hover:text-brand-600 transition-colors">
+                        {stat.value}
+                      </span>
+                      <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">
+                        {stat.label}
+                      </p>
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+
+            {/* Call to Action Buttons */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 mb-8"
+            >
+              <Button 
+                href={href} 
+                onClick={enrollClick}
+                className="text-lg px-8 py-4 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                <Zap className="w-5 h-5 mr-2" />
+                Enroll Today — {price.monthly}
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <GhostButton className="text-lg px-8 py-4 border-2">
+                <Sparkles className="w-5 h-5 mr-2" />
+                See What's Included
+              </GhostButton>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              className="flex flex-wrap items-center gap-4 text-sm text-slate-600"
+            >
+              <div className="flex items-center gap-2">
+                <Shield className="w-4 h-4 text-green-500" />
+                <span>No contracts</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-blue-500" />
+                <span>Cancel anytime</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="w-4 h-4 text-purple-500" />
+                <span>10,000+ members</span>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column - Service Cards */}
+          <div className="lg:col-span-5">
+            <div className="grid gap-4">
+              {services.map((service, i) => (
+                <InteractiveServiceCard
+                  key={i}
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  color={service.color}
+                  delay={i * 0.2}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
                 
