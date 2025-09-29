@@ -408,8 +408,7 @@ export function Hero() {
                 </FloatingElement>
 
                 <FloatingElement delay={3.5} duration={6}>
-                  <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-2xl p-3 shadow-xl"
-                >
+                  <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-2xl p-3 shadow-xl">
                     <TrendingUp className="w-5 h-5 text-white" />
                   </div>
                 </FloatingElement>
@@ -469,17 +468,18 @@ export function Hero() {
                   transition={{ delay: 2.7 + i * 0.1 }}
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="flex items-center gap-3 group cursor-pointer"
-                </motion.div>
-                
-                <motion.div 
-                  animate={{ y: [0, -15, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -bottom-4 -left-4 bg-brand-500 rounded-2xl p-3 shadow-lg"
                 >
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                     className={`w-10 h-10 rounded-2xl bg-white shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300`}
+                  >
+                    <Icon className={`w-5 h-5 ${item.color}`} />
+                  </motion.div>
+                  <span className="font-semibold text-slate-700 group-hover:text-slate-900 transition-colors">
+                    {item.label}
+                  </span>
+                </motion.div>
               )
             })}
           </div>
@@ -509,7 +509,7 @@ export function Hero() {
             <Star className="w-4 h-4 text-yellow-500" fill="currentColor" />
           </div>
         </FloatingElement>
-        </div>
+      </div>
     </section>
   )
 }
