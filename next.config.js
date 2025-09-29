@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  transpilePackages: ['framer-motion'],
   trailingSlash: true,
   images: { 
     unoptimized: true,
@@ -11,6 +12,7 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
     optimizeCss: true,
+    serverComponentsExternalPackages: ['framer-motion'],
   },
   compress: true,
   poweredByHeader: false,
