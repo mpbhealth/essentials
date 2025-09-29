@@ -118,7 +118,7 @@ export function Services() {
   }
 
   return (
-    <section className='relative py-20 md:py-28 overflow-hidden'>
+    <section id='services' className='relative py-20 md:py-28 overflow-hidden'>
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-accent-50/30" />
       <div className="absolute -top-1/4 -left-1/4 w-96 h-96 bg-brand-100 rounded-full blur-3xl opacity-20 animate-pulse-slow" />
@@ -343,21 +343,6 @@ export function Services() {
                 Learn how it works
                 <ArrowRight className="w-4 h-4" />
               </StrategicLink>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-slate-600">All services available instantly</span>
-            </div>
-            <div className="w-px h-4 bg-slate-300" />
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-brand-500" />
-              <span className="text-sm font-medium text-slate-600">24/7/365 access</span>
             </div>
           </div>
         </motion.div>
