@@ -61,7 +61,7 @@ const InteractiveServiceCard = ({ icon: Icon, title, description, color, delay }
 )
 
 export function Hero() {
-  const href = process.env.NEXT_PUBLIC_ENROLL_URL || '#'
+  const href = 'https://www.1enrollment.com/order/checkout.cfm?id=768413&pdid=42463'
   
   const services = [
     {

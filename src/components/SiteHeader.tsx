@@ -8,7 +8,7 @@ import { Menu, X, Heart } from 'lucide-react'
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const href = process.env.NEXT_PUBLIC_ENROLL_URL || '#'
+  const href = 'https://www.1enrollment.com/order/checkout.cfm?id=768413&pdid=42463'
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)

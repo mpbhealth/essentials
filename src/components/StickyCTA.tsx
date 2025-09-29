@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button'
 import { enrollClick } from '@/lib/track'
 
 export function StickyCTA() {
-  const href = process.env.NEXT_PUBLIC_ENROLL_URL || '#'
+  const href = 'https://www.1enrollment.com/order/checkout.cfm?id=768413&pdid=42463'
   return (
     <div className='fixed bottom-3 inset-x-3 z-40 md:hidden'>
       <a href={href} onClick={() => enrollClick('sticky')} className='block'>

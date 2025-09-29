@@ -54,7 +54,7 @@ const features = [
 export function Pricing() {
   const [activeValue, setActiveValue] = useState(0)
   const [totalSavings, setTotalSavings] = useState(0)
-  const href = process.env.NEXT_PUBLIC_ENROLL_URL || '#'
+  const href = 'https://www.1enrollment.com/order/checkout.cfm?id=768413&pdid=42463'
 
   useEffect(() => {
     const timer = setInterval(() => {
