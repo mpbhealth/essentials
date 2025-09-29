@@ -12,7 +12,6 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
     optimizeCss: true,
-    serverComponentsExternalPackages: ['framer-motion'],
   },
   compress: true,
   poweredByHeader: false,
