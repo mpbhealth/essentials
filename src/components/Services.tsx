@@ -124,7 +124,7 @@ export function Services() {
       <div className="absolute -top-1/4 -left-1/4 w-96 h-96 bg-brand-100 rounded-full blur-3xl opacity-20 animate-pulse-slow" />
       <div className="absolute -bottom-1/4 -right-1/4 w-96 h-96 bg-accent-100 rounded-full blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '1s' }} />
       
-      <div className='relative mx-auto max-w-7xl px-4' ref={timelineRef}>
+      <div className='relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8' ref={timelineRef}>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -138,7 +138,7 @@ export function Services() {
             <span className="text-sm font-semibold text-brand-700">Complete Healthcare Journey</span>
           </div>
           
-          <h2 className='text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6'>
+          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6'>
             Your{' '}
             <span className="text-gradient bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">
               healthcare journey
@@ -146,7 +146,7 @@ export function Services() {
             {' '}reimagined
           </h2>
           
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
             From urgent care to lifelong wellness - discover how our integrated services support you at every step
           </p>
         </motion.div>
@@ -189,7 +189,7 @@ export function Services() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className='grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10'
+            className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 relative z-10'
           >
             {services.map((service, i) => {
               const Icon = serviceIcons[i]
@@ -227,7 +227,7 @@ export function Services() {
                   <Card className={`h-full transition-all duration-500 border-2 hover:shadow-2xl hover:-translate-y-2 group ${
                     isActive ? 'border-brand-300 shadow-xl scale-105' : 'border-transparent hover:border-brand-200'
                   }`}>
-                    <CardBody className="relative overflow-hidden p-8">
+                    <CardBody className="relative overflow-hidden p-6 sm:p-8">
                       {/* Background Pattern */}
                       <div className={`absolute inset-0 opacity-5 ${journey.bgColor} transition-opacity duration-300 group-hover:opacity-10`} />
                       
@@ -247,11 +247,11 @@ export function Services() {
                       </motion.div>
 
                       {/* Content */}
-                      <h3 className='text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-700 transition-colors duration-300'>
+                      <h3 className='text-lg sm:text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-700 transition-colors duration-300'>
                         {service.title}
                       </h3>
                       
-                      <p className='text-sm text-slate-600 mb-4 leading-relaxed'>
+                      <p className='text-sm sm:text-base text-slate-600 mb-4 leading-relaxed'>
                         {service.desc}
                       </p>
 

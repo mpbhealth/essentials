@@ -34,7 +34,7 @@ export function SiteHeader() {
       }`}
     >
       <div className='mx-auto max-w-7xl px-4'>
-        <div className='flex h-16 md:h-20 items-center justify-between'>
+        <div className='flex h-14 sm:h-16 md:h-20 items-center justify-between'>
           {/* Logo */}
           <motion.a 
             href='/' 
@@ -46,7 +46,7 @@ export function SiteHeader() {
              <img 
               src="/MPB-Health-No-background.png"
                alt="MPB Health"
-               className='h-8 md:h-10 w-auto object-contain'
+               className='h-6 sm:h-8 md:h-10 w-auto object-contain'
              />
              <div className='absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-r from-brand-500 to-accent-500 rounded-lg blur-lg transition-opacity duration-300' />
            </div>
@@ -89,7 +89,7 @@ export function SiteHeader() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className='lg:hidden p-2 rounded-lg hover:bg-white/20 transition-colors'
+            className='md:hidden p-2 rounded-lg hover:bg-white/20 transition-colors touch-manipulation'
             aria-label='Toggle mobile menu'
           >
             <AnimatePresence mode='wait'>
@@ -126,9 +126,9 @@ export function SiteHeader() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className='lg:hidden border-t border-white/20 bg-white/90 backdrop-blur-sm'
+              className='md:hidden border-t border-white/20 bg-white/95 backdrop-blur-sm shadow-lg'
             >
-              <nav className='py-4 space-y-2'>
+              <nav className='py-4 space-y-1 max-h-[80vh] overflow-y-auto'>
                 {navigation.map((item, index) => (
                   <motion.a
                     key={item.name}
@@ -137,7 +137,7 @@ export function SiteHeader() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className='block py-2 px-4 text-slate-600 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors'
+                    className='block py-3 px-4 text-base font-medium text-slate-600 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors touch-manipulation'
                   >
                     {item.name}
                   </motion.a>
@@ -149,7 +149,7 @@ export function SiteHeader() {
                   className='px-4 pt-2'
                 >
                   <a href={href} onClick={() => enrollClick('mobile_header')} className='block'>
-                    <Button className='w-full bg-brand-500 hover:bg-brand-600 text-white'>
+                    <Button className='w-full bg-brand-500 hover:bg-brand-600 text-white py-4 text-base font-semibold touch-manipulation'>
                       Enroll Now
                     </Button>
                   </a>
