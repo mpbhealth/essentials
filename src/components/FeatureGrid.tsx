@@ -52,7 +52,7 @@ export function FeatureGrid() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-100 rounded-full blur-3xl opacity-20 animate-pulse-slow" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-100 rounded-full blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }} />
       
-      <div className='relative mx-auto max-w-7xl px-4'>
+      <div className='relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,14 +66,14 @@ export function FeatureGrid() {
             <span className="text-sm font-semibold text-brand-700">Complete Healthcare Solution</span>
           </div>
           
-          <h2 className='text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6'>
+          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6'>
             What you get with{' '}
             <span className="text-gradient bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">
               Essentials
             </span>
           </h2>
           
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
             Everything you need for comprehensive healthcare coverage, all in one membership
           </p>
         </motion.div>
@@ -84,7 +84,7 @@ export function FeatureGrid() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8'
+          className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8'
         >
           {bullets.map((feature, i) => {
             const Icon = featureIcons[i]
@@ -125,7 +125,7 @@ export function FeatureGrid() {
                     </motion.div>
 
                     {/* Feature Title */}
-                    <h3 className='text-lg font-bold text-slate-900 mb-3 leading-tight group-hover:text-brand-700 transition-colors duration-300'>
+                    <h3 className='text-base sm:text-lg font-bold text-slate-900 mb-3 leading-tight group-hover:text-brand-700 transition-colors duration-300'>
                       {feature}
                     </h3>
                     
