@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-import { MessageSquare, CircleCheck as CheckCircle, Sparkles, Users, Clock, Shield } from 'lucide-react'
+import { MessageSquare, CircleCheck as CheckCircle, Sparkles, Users, Clock, Shield, Phone, Mail, MapPin } from 'lucide-react'
 
 export function LeadForm() {
   const advisorStats = [
@@ -67,6 +67,94 @@ export function LeadForm() {
             Have questions about Essentials? Our certified healthcare advisors will help you understand 
             if our membership is right for your needs—completely free consultation.
           </p>
+
+          {/* Contact Information Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="max-w-2xl mx-auto mb-12"
+          >
+            <div className="glass border border-white/30 rounded-3xl shadow-xl backdrop-blur-xl p-6 md:p-8 relative overflow-hidden">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-50/30 to-accent-50/30" />
+              
+              <div className="relative z-10">
+                <h3 className="text-lg font-bold text-slate-900 mb-6 text-center">Contact Us</h3>
+                
+                <div className="grid md:grid-cols-3 gap-6">
+                  {/* Phone */}
+                  <motion.a
+                    href="tel:8558164650"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    className="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-white/50 transition-all duration-300 group"
+                  >
+                    <motion.div
+                      whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                      className="w-12 h-12 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 shadow-lg flex items-center justify-center group-hover:shadow-xl transition-shadow duration-300"
+                    >
+                      <Phone className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <div className="text-center">
+                      <div className="text-sm font-bold text-slate-900 group-hover:text-brand-700 transition-colors">
+                        (855) 816-4650
+                      </div>
+                      <div className="text-xs text-slate-600">Call us</div>
+                    </div>
+                  </motion.a>
+
+                  {/* Email */}
+                  <motion.a
+                    href="mailto:info@mympb.com"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    className="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-white/50 transition-all duration-300 group"
+                  >
+                    <motion.div
+                      whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                      className="w-12 h-12 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 shadow-lg flex items-center justify-center group-hover:shadow-xl transition-shadow duration-300"
+                    >
+                      <Mail className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <div className="text-center">
+                      <div className="text-sm font-bold text-slate-900 group-hover:text-brand-700 transition-colors">
+                        info@mympb.com
+                      </div>
+                      <div className="text-xs text-slate-600">Email us</div>
+                    </div>
+                  </motion.a>
+
+                  {/* Location */}
+                  <motion.div
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    className="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-white/50 transition-all duration-300 group"
+                  >
+                    <motion.div
+                      whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                      className="w-12 h-12 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg flex items-center justify-center group-hover:shadow-xl transition-shadow duration-300"
+                    >
+                      <MapPin className="w-6 h-6 text-white" />
+                    </motion.div>
+                    <div className="text-center">
+                      <div className="text-sm font-bold text-slate-900 group-hover:text-brand-700 transition-colors">
+                        5301 N Federal Hwy
+                      </div>
+                      <div className="text-xs text-slate-600">Boca Raton, FL 33487</div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Floating decoration */}
+              <motion.div 
+                animate={{ y: [0, -5, 0], rotate: [0, 5, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-4 right-4 w-8 h-8 rounded-xl bg-gradient-to-r from-accent-400 to-accent-500 shadow-lg flex items-center justify-center opacity-30"
+              >
+                <MessageSquare className="w-4 h-4 text-white" />
+              </motion.div>
+            </div>
+          </motion.div>
 
           {/* Stats */}
           <motion.div
