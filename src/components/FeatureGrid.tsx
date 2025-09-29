@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardBody } from '@/components/ui/Card'
@@ -186,7 +185,7 @@ export function FeatureGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="glass border border-white/30 rounded-3xl shadow-2xl backdrop-blur-xl overflow-hidden"
+                className="glass border border-white/30 rounded-3xl shadow-2xl backdrop-blur-xl overflow-hidden relative"
               >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-50/40 to-accent-50/40" />
@@ -197,7 +196,7 @@ export function FeatureGrid() {
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute top-6 right-6 w-12 h-12 rounded-2xl bg-gradient-to-r from-brand-400 to-accent-500 shadow-xl flex items-center justify-center opacity-30"
                 >
-              <Sparkles className="w-4 h-4 text-brand-500" />
+                  <Sparkles className="w-6 h-6 text-white" />
                 </motion.div>
 
                 <div className="relative z-10 p-8 md:p-12">
@@ -306,41 +305,6 @@ export function FeatureGrid() {
                   <CheckCircle className="w-6 h-6 text-white" />
                 </motion.div>
               </motion.div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
-            
-            {/* Related Content Links */}
-            <div className="max-w-4xl mx-auto">
-              <RelatedLinks
-                title="Learn More About Your Benefits"
-                links={[
-                  {
-                    href: "/#pricing",
-                    text: "View Membership Pricing",
-                    description: "Transparent pricing for all Essentials benefits"
-                  },
-                  {
-                    href: "/#how-it-works", 
-                    text: "How to Get Started",
-                    description: "Simple 3-step enrollment process"
-                  },
-                  {
-                    href: "/#services",
-                    text: "Virtual Healthcare Services", 
-                    description: "24/7 urgent care, primary care, and mental health"
-                  },
-                  {
-                    href: "/#faq",
-                    text: "Frequently Asked Questions",
-                    description: "Common questions about membership benefits"
-                  }
-                ]}
-              />
             </div>
           </div>
         </motion.div>
