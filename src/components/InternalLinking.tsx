@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowRight, Home, ChevronRight } from 'lucide-react'
+import { ArrowRight, Chrome as Home, ChevronRight } from 'lucide-react'
 
 // Breadcrumb Component
 export function Breadcrumbs({ 
