@@ -42,17 +42,16 @@ export function SiteHeader() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className='relative'>
-              <div className='h-8 w-8 md:h-10 md:w-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 shadow-lg flex items-center justify-center'>
-                <Heart className='w-4 h-4 md:w-5 md:h-5 text-white' fill='currentColor' />
-              </div>
-              <div className='absolute inset-0 rounded-xl bg-gradient-to-br from-brand-400 to-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse' />
-            </div>
-            <div className='hidden sm:block'>
-              <div className='font-black text-lg md:text-xl text-slate-900'>
-                MPB<span className='text-brand-500'>Health</span>
-              </div>
-              <div className='text-xs text-slate-500 -mt-1'>Essentials</div>
+           <div className='relative group-hover:scale-105 transition-transform duration-300'>
+             <img 
+               src="https://mpb.health/wp-content/uploads/2025/05/MPB-Health-No-background.png"
+               alt="MPB Health"
+               className='h-8 md:h-10 w-auto object-contain'
+             />
+             <div className='absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-r from-brand-500 to-accent-500 rounded-lg blur-lg transition-opacity duration-300' />
+           </div>
+           <div className='hidden sm:block'>
+             <div className='text-xs text-slate-500 font-medium'>Essentials</div>
             </div>
           </motion.a>
 
