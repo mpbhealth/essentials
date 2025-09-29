@@ -48,9 +48,6 @@ export function Hero() {
       }
     }
   }
-      }
-    }
-  }
 
   return (
     <section className="relative overflow-hidden min-h-screen flex items-center">
