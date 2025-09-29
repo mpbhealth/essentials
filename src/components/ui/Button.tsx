@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { ButtonHTMLAttributes } from 'react'
 import { clsx } from 'clsx'
