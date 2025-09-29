@@ -5,22 +5,7 @@ import { motion } from 'framer-motion'
 import { Button, PremiumButton } from '@/components/ui/Button'
 import { enrollClick } from '@/lib/track'
 import { price, pitch } from '@/data/essentials'
-import { 
-  Sparkles, 
-  Shield, 
-  Heart, 
-  Zap, 
-  Users, 
-  Clock, 
-  Phone,
-  Video,
-  MessageSquare,
-  Star,
-  Award,
-  ArrowRight,
-  CheckCircle,
-  Crown
-} from 'lucide-react'
+import { Sparkles, Shield, Heart, Zap, Users, Clock, Phone, Video, MessageSquare, Star, Award, ArrowRight, CircleCheck as CheckCircle, Crown } from 'lucide-react'
 
 export function Hero() {
   const [activeFeature, setActiveFeature] = useState(0)
