@@ -12,6 +12,7 @@ import { Disclaimer } from '@/components/Disclaimer';
 import { Testimonials } from '@/components/Testimonials';
 import { LeadForm } from '@/components/LeadForm';
 import { CookieBanner } from '@/components/CookieBanner';
+import { JotformAgent } from '@/components/JotformAgent';
 
 export default function Page() {
   const productLd = {
@@ -39,6 +40,7 @@ export default function Page() {
       <Disclaimer />
       <SiteFooter />
       <StickyCTA />
+      <JotformAgent />
       <CookieBanner />
     </main>
   );
