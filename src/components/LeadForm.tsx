@@ -121,7 +121,7 @@ export function LeadForm() {
               <motion.div 
                 animate={{ y: [0, -8, 0], rotate: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-6 right-6 w-12 h-12 rounded-2xl bg-gradient-to-r from-brand-400 to-accent-500 shadow-lg flex items-center justify-center"
+                className="absolute top-6 right-6 w-12 h-12 rounded-2xl bg-gradient-to-r from-brand-400 to-accent-500 shadow-xl hover:shadow-2xl flex items-center justify-center z-30 transition-shadow duration-300"
               >
                 <Sparkles className="w-6 h-6 text-white" />
               </motion.div>
