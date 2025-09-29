@@ -91,7 +91,7 @@ export function FAQ() {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-100 rounded-full blur-3xl opacity-20 animate-pulse-slow" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-100 rounded-full blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }} />
 
-      <div className='relative mx-auto max-w-5xl px-4'>
+      <div className='relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -105,7 +105,7 @@ export function FAQ() {
             <span className="text-sm font-semibold text-brand-700">Frequently Asked Questions</span>
           </div>
           
-          <h2 className='text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6'>
+          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6'>
             <span className="text-gradient bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">
               Questions?
             </span>
@@ -113,7 +113,7 @@ export function FAQ() {
             <span className="text-slate-700">We have answers</span>
           </h2>
           
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8 px-4">
             Everything you need to know about Essentials membership, coverage, and how to get started.
           </p>
 
@@ -193,7 +193,7 @@ export function FAQ() {
                       {/* Question */}
                       <motion.div
                         onClick={() => toggleFAQ(i)}
-                        className="relative z-10 flex items-center gap-4 p-2"
+                        className="relative z-10 flex items-center gap-4 p-2 cursor-pointer touch-manipulation"
                       >
                         {/* Icon */}
                         <motion.div
@@ -213,7 +213,7 @@ export function FAQ() {
                         
                         {/* Question Text */}
                         <div className="flex-1">
-                          <div className={`font-bold text-lg transition-colors duration-300 ${
+                          <div className={`font-bold text-base sm:text-lg transition-colors duration-300 ${
                             isOpen ? 'text-brand-700' : 'text-slate-900 group-hover:text-brand-600'
                           }`}>
                             {faq.q}
@@ -262,7 +262,7 @@ export function FAQ() {
                                 className="flex items-start gap-3"
                               >
                                 <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                                <p className='text-slate-700 leading-relaxed text-lg'>
+                                <p className='text-slate-700 leading-relaxed text-base sm:text-lg'>
                                   {faq.a}
                                 </p>
                               </motion.div>

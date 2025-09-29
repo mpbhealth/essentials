@@ -117,7 +117,7 @@ export function Pricing() {
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-100 rounded-full blur-3xl opacity-30 animate-pulse-slow" />
       <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-accent-100 rounded-full blur-3xl opacity-30 animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
       
-      <div className='relative mx-auto max-w-7xl px-4'>
+      <div className='relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -131,7 +131,7 @@ export function Pricing() {
             <span className="text-sm font-semibold text-brand-700">Premium Value</span>
           </div>
           
-          <h2 className='text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6'>
+          <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6'>
             <span className="text-gradient bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">
               Transparent pricing
             </span>
@@ -139,7 +139,7 @@ export function Pricing() {
             <span className="text-slate-700">extraordinary value</span>
           </h2>
           
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8 px-4">
             Essentials provides comprehensive healthcare solutions for minor to major health concerns. 
             A powerful complement to any healthcare plan, or a standalone solution for complete peace of mind.
           </p>
@@ -216,7 +216,7 @@ export function Pricing() {
         </motion.div>
 
         {/* Main Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Features Card */}
           <motion.div
             variants={itemVariants}
@@ -229,10 +229,10 @@ export function Pricing() {
               <CardBody className="p-8 md:p-10">
                 <div className="flex items-start justify-between mb-8">
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-2">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 mb-2">
                       Complete Healthcare Solution
                     </h3>
-                    <p className="text-slate-600 text-lg leading-relaxed max-w-2xl">
+                    <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
                       Everything you need for comprehensive healthcare coverage, preventive care, and emergency support—all in one membership.
                     </p>
                   </div>
@@ -246,7 +246,7 @@ export function Pricing() {
                 </div>
 
                 {/* Features List */}
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
                   {features.map((feature, i) => (
                     <motion.div
                       key={i}
@@ -315,7 +315,7 @@ export function Pricing() {
               {/* Premium Gradient Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-accent-50 opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
               
-              <CardBody className="relative z-10 p-8 text-center">
+              <CardBody className="relative z-10 p-6 sm:p-8 text-center">
                 {/* Pricing */}
                 <motion.div
                   initial={{ scale: 0 }}
@@ -324,12 +324,12 @@ export function Pricing() {
                   transition={{ type: "spring", stiffness: 150, delay: 0.5 }}
                   className="mb-6"
                 >
-                  <div className="text-5xl md:text-6xl font-black text-slate-900 mb-2">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-2">
                     <span className="text-gradient bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">
                       ${price.startingAt.toFixed(2)}
                     </span>
                   </div>
-                  <div className="text-lg font-semibold text-slate-600">/month</div>
+                  <div className="text-base sm:text-lg font-semibold text-slate-600">/month</div>
                   
                   {/* Comparison */}
                   <div className="mt-4 text-sm text-slate-500">

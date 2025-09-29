@@ -177,7 +177,7 @@ export function SiteFooter() {
         </motion.div>
 
         {/* Main Footer Content */}
-        <div className='grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12'>
           {/* Brand Section */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -192,7 +192,7 @@ export function SiteFooter() {
               <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 to-accent-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               {/* Content */}
-              <div className="relative z-10">
+              <div className="relative z-10 text-center md:text-left">
                 <div className='flex items-center gap-4 mb-6'>
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
@@ -221,7 +221,7 @@ export function SiteFooter() {
                   <StrategicLink 
                     href="tel:8558164650" 
                     variant="inline"
-                    className="flex items-center gap-3 text-slate-300 hover:text-white group/link transition-colors duration-300"
+                    className="flex items-center gap-3 text-slate-300 hover:text-white group/link transition-colors duration-300 justify-center md:justify-start"
                     rel="contact"
                   >
                     <motion.div
@@ -236,7 +236,7 @@ export function SiteFooter() {
                   <StrategicLink 
                     href="mailto:info@mympb.com"
                     variant="inline" 
-                    className="flex items-center gap-3 text-slate-300 hover:text-white group/link transition-colors duration-300"
+                    className="flex items-center gap-3 text-slate-300 hover:text-white group/link transition-colors duration-300 justify-center md:justify-start"
                     rel="contact"
                   >
                     <motion.div
@@ -248,7 +248,7 @@ export function SiteFooter() {
                     <span className="font-semibold">info@mympb.com</span>
                   </StrategicLink>
                   
-                  <div className="flex items-start gap-3 text-slate-300">
+                  <div className="flex items-start gap-3 text-slate-300 justify-center md:justify-start">
                     <motion.div
                       whileHover={{ scale: 1.2, rotate: [0, -10, 10, 0] }}
                       className="w-10 h-10 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg flex items-center justify-center"
@@ -344,9 +344,9 @@ export function SiteFooter() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className='glass border-t border-white/20 pt-8 backdrop-blur-xl bg-white/5 rounded-2xl p-6'
         >
-          <div className='flex flex-col md:flex-row items-center justify-between gap-6'>
+          <div className='flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6'>
             {/* Copyright */}
-            <div className="flex items-center gap-3 text-slate-300">
+            <div className="flex items-center gap-3 text-slate-300 text-center md:text-left">
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
@@ -358,7 +358,7 @@ export function SiteFooter() {
             </div>
             
             {/* Legal Links */}
-            <nav className='flex items-center gap-6'>
+            <nav className='flex flex-wrap items-center justify-center gap-4 md:gap-6'>
               {[
                 { text: "Terms of Service", href: "#", rel: "legal" },
                 { text: "Privacy Policy", href: "#", rel: "legal" },
@@ -396,9 +396,9 @@ export function SiteFooter() {
         }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-brand-500 to-accent-500 rounded-full shadow-2xl flex items-center justify-center z-50 hover:shadow-3xl transition-shadow duration-300"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-brand-500 to-accent-500 rounded-full shadow-2xl flex items-center justify-center z-50 hover:shadow-3xl transition-shadow duration-300 touch-manipulation"
       >
-        <ChevronUp className="w-6 h-6 text-white" />
+        <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
       </motion.button>
     </footer>
   )
