@@ -19,7 +19,7 @@ const items = [
     icon: '🧠',
     title: 'Feel Balanced Again',
     blurb:
-      'Talk to a counselor virtually—up to the session limits in your membership—to lower stress, sleep better, and build lasting resilience.',
+      'Behavioral health visits at $0 after assessment, with flexible session extensions, plus counseling by Master's-level clinicians and psychiatry services.',
     sub: 'Mental & emotional health that fits life',
     meta: 'Easy to schedule'
   },
