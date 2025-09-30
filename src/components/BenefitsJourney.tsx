@@ -28,7 +28,7 @@ const items = [
     icon: '💚',
     title: 'Less Money Stress',
     blurb:
-      'Expert guidance for eldercare, budgeting, and financial wellness—so big decisions feel simpler and you keep more of what you earn.',
+      'Our MPB Concierge team provides personalized support tailored to your unique healthcare needs—connecting you with the right care, at the right time, with expert guidance every step of the way.',
     sub: 'Clear options, confident choices',
     meta: 'Human experts'
   },
