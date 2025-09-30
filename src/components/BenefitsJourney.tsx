@@ -19,7 +19,7 @@ const items = [
     icon: '🧠',
     title: 'Feel Balanced Again',
     blurb:
-      'Behavioral health visits at $0 after assessment, with flexible session extensions, plus counseling by Master's-level clinicians and psychiatry services.',
+      'Behavioral health visits at $0 after assessment, with flexible session extensions, plus counseling by Master\'s-level clinicians and psychiatry services.',
     sub: 'Mental & emotional health that fits life',
     meta: 'Easy to schedule'
   },
