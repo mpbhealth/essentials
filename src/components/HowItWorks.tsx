@@ -359,34 +359,36 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 1.5 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="mt-20 flex justify-center"
         >
-          {[
-            { icon: Clock, stat: '< 5 min', label: 'Average signup time' },
-            { icon: Shield, stat: '100%', label: 'Secure checkout' },
-            { icon: Star, stat: '4.9/5', label: 'Member satisfaction' }
-          ].map((item, i) => {
-            const Icon = item.icon
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 + 1.7 }}
-                className="text-center group"
-              >
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl">
+            {[
+              { icon: Clock, stat: '< 5 min', label: 'Average signup time' },
+              { icon: Shield, stat: '100%', label: 'Secure checkout' },
+              { icon: Star, stat: '4.9/5', label: 'Member satisfaction' }
+            ].map((item, i) => {
+              const Icon = item.icon
+              return (
                 <motion.div
-                  whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
-                  className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 shadow-lg flex items-center justify-center group-hover:shadow-xl transition-shadow duration-300"
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 + 1.7 }}
+                  className="text-center group"
                 >
-                  <Icon className="w-6 h-6 text-white" />
+                  <motion.div
+                    whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }}
+                    className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 shadow-lg flex items-center justify-center group-hover:shadow-xl transition-shadow duration-300"
+                  >
+                    <Icon className="w-6 h-6 text-white" />
+                  </motion.div>
+                  <div className="text-xl font-bold text-slate-900">{item.stat}</div>
+                  <div className="text-sm text-slate-600">{item.label}</div>
                 </motion.div>
-                <div className="text-xl font-bold text-slate-900">{item.stat}</div>
-                <div className="text-sm text-slate-600">{item.label}</div>
-              </motion.div>
-            )
-          })}
+              )
+            })}
+          </div>
         </motion.div>
 
         {/* Final CTA */}
