@@ -112,7 +112,7 @@ export function BenefitsJourney() {
           </h2>
           
           <p className='text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4'>
-            From urgent moments to everyday wellness—see how these benefits make life easier, calmer, and more affordable.
+            From everyday wellness to peace of mind—see how these benefits make healthcare more accessible, easier, and affordable.
           </p>
         </motion.div>
 
