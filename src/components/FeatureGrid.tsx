@@ -74,7 +74,7 @@ export function FeatureGrid() {
           </h2>
           
           <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
-            Everything you need for comprehensive healthcare coverage, all in one membership
+            Your day-to-day healthcare needs made simple—a powerful complement to any major medical plan
           </p>
         </motion.div>
 
