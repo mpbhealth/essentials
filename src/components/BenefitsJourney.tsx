@@ -46,7 +46,7 @@ const items = [
     icon: '🧭',
     title: 'Pay Fair Prices',
     blurb:
-      'Get personalized guidance and support through your healthcare journey—our experts help you navigate decisions, find quality providers, and understand your options every step of the way.',
+      'Concierge finds quality options for labs, imaging, and prescriptions—helping you avoid surprise bills and overpaying. We can also guide hospital financial assistance where eligible.',
     sub: 'Clarity before you book',
     meta: '1:1 guidance'
   },
