@@ -29,7 +29,7 @@ const items = [
     title: 'Care Made Personal',
     blurb:
       'Our MPB Concierge team provides personalized support tailored to your unique healthcare needs—connecting you with the right care, at the right time, with expert guidance every step of the way.',
-    sub: 'Clear options, confident choices',
+    sub: 'Expert guidance, every step of the way',
     meta: 'Human experts'
   },
   {
