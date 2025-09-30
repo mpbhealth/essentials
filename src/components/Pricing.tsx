@@ -7,61 +7,9 @@ import { price } from '@/data/essentials'
 import { enrollClick } from '@/lib/track'
 import { DollarSign, Shield, Clock, Heart, Zap, CircleCheck as CheckCircle, TrendingUp, Users, Calculator, Sparkles, ArrowRight, Star, Award, Crown } from 'lucide-react'
 
-const valueProps = [
-  {
-    icon: Clock,
-    title: '24/7 Access',
-    description: 'Virtual urgent care anytime',
-    value: '$200+ saved per visit',
-    color: 'from-blue-500 to-cyan-500',
-    bgColor: 'bg-blue-50'
-  },
-  {
-    icon: Heart,
-    title: 'Primary Care',
-    description: 'Unlimited consultations',
-    value: '$150+ saved per visit',
-    color: 'from-red-500 to-pink-500',
-    bgColor: 'bg-red-50'
-  },
-  {
-    icon: Shield,
-    title: 'Mental Health',
-    description: 'Up to 12 sessions/year',
-    value: '$1,800+ value',
-    color: 'from-purple-500 to-indigo-500',
-    bgColor: 'bg-purple-50'
-  },
-  {
-    icon: Users,
-    title: 'Concierge Support',
-    description: 'Expert healthcare navigation',
-    value: '$500+ saved monthly',
-    color: 'from-green-500 to-emerald-500',
-    bgColor: 'bg-green-50'
-  }
-]
-
-const features = [
-  '$0 Unlimited Virtual Urgent Care',
-  '$0 Primary Care & Behavioral Health', 
-  'MPB Concierge Cost & Quality Search',
-  'Medical Records Vault & QR LifeCode',
-  'Pharmacy & Supplements Discounts',
-  'Pet Telehealth Included'
-]
-
 export function Pricing() {
-  const [activeValue, setActiveValue] = useState(0)
   const [totalSavings, setTotalSavings] = useState(0)
   const href = 'https://www.1enrollment.com/order/checkout.cfm?id=768413&pdid=42463'
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveValue(prev => (prev + 1) % valueProps.length)
-    }, 3000)
-    return () => clearInterval(timer)
-  }, [])
 
   useEffect(() => {
     // Animate total savings counter
@@ -157,146 +105,15 @@ export function Pricing() {
           </motion.div>
         </motion.div>
 
-        {/* Value Propositions Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
-        >
-          {valueProps.map((prop, i) => {
-            const Icon = prop.icon
-            const isActive = activeValue === i
-
-            return (
-              <motion.div
-                key={i}
-                variants={itemVariants}
-                className="group"
-                onHoverStart={() => setActiveValue(i)}
-              >
-                <Card className={`h-full transition-all duration-500 border-2 hover:shadow-2xl hover:-translate-y-2 ${
-                  isActive ? 'border-brand-300 shadow-xl scale-105' : 'border-transparent hover:border-brand-200'
-                }`}>
-                  <CardBody className="relative overflow-hidden p-6 text-center">
-                    {/* Background Pattern */}
-                    <div className={`absolute inset-0 opacity-5 ${prop.bgColor} transition-opacity duration-300 group-hover:opacity-10`} />
-                    
-                    {/* Icon */}
-                    <motion.div
-                      whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                      transition={{ duration: 0.5 }}
-                      className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r ${prop.color} shadow-lg flex items-center justify-center group-hover:shadow-xl transition-shadow duration-300`}
-                    >
-                      <Icon className="w-8 h-8 text-white" />
-                    </motion.div>
-
-                    <h3 className="text-lg font-bold text-slate-900 mb-2">{prop.title}</h3>
-                    <p className="text-sm text-slate-600 mb-3">{prop.description}</p>
-                    
-                    <div className={`text-sm font-bold bg-gradient-to-r ${prop.color} bg-clip-text text-transparent`}>
-                      {prop.value}
-                    </div>
-
-                    {/* Active Indicator */}
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: isActive ? 1 : 0 }}
-                      className="absolute top-3 right-3 w-3 h-3 bg-brand-500 rounded-full"
-                    />
-
-                    {/* Hover Overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${prop.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none`} />
-                  </CardBody>
-                </Card>
-              </motion.div>
-            )
-          })}
-        </motion.div>
-
         {/* Main Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
-          {/* Features Card */}
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="lg:col-span-2"
-          >
-            <Card className="h-full glass border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-500 group">
-              <CardBody className="p-8 md:p-10">
-                <div className="flex items-start justify-between mb-8">
-                  <div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 mb-2">
-                      Complete Healthcare Solution
-                    </h3>
-                    <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl">
-                      Everything you need for comprehensive healthcare coverage, preventive care, and emergency support—all in one membership.
-                    </p>
-                  </div>
-                  <motion.div
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="flex-shrink-0"
-                  >
-                    <Award className="w-12 h-12 text-brand-500" />
-                  </motion.div>
-                </div>
-
-                {/* Features List */}
-                <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4">
-                  {features.map((feature, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-brand-50 transition-colors duration-300 group/item"
-                    >
-                      <motion.div
-                        whileHover={{ scale: 1.2, rotate: 360 }}
-                        className="w-6 h-6 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 flex items-center justify-center flex-shrink-0"
-                      >
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </motion.div>
-                      <span className="text-slate-700 font-medium group-hover/item:text-brand-700 transition-colors">
-                        {feature}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Value Highlight */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.8 }}
-                  className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-brand-50 to-accent-50 border border-brand-200"
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    <Calculator className="w-5 h-5 text-brand-600" />
-                    <span className="font-bold text-brand-700">Value Breakdown</span>
-                  </div>
-                  <p className="text-sm text-slate-600">
-                    Comparable services would cost $200+ per urgent care visit, $150+ per primary care visit, 
-                    and $150+ per mental health session. With Essentials, you get unlimited access for just $49.95/month.
-                  </p>
-                </motion.div>
-              </CardBody>
-            </Card>
-          </motion.div>
-
+        <div className="flex justify-center">
           {/* Pricing Card */}
           <motion.div
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="relative"
+            className="relative max-w-md"
           >
             {/* Popular Badge */}
             <motion.div
