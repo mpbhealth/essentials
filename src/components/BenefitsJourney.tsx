@@ -33,13 +33,13 @@ const items = [
     meta: 'Human experts'
   },
   {
-    tag: { label: 'Growth & Learning', color: 'bg-fuchsia-500' },
-    icon: '🎓',
-    title: 'Grow Your Skills',
+    tag: { label: 'Family Care', color: 'bg-fuchsia-500' },
+    icon: '🐾',
+    title: 'Your Pets Covered',
     blurb:
-      'A training library for work & life—level up communication, leadership, and wellbeing with bite-size lessons you can track.',
-    sub: 'Small steps, real progress',
-    meta: 'On-demand'
+      'Virtual vet consultations for your furry family members—get expert advice on pet health concerns without the stress of clinic visits.',
+    sub: 'Because pets are family too',
+    meta: 'Pet telehealth'
   },
   {
     tag: { label: 'Smart Navigation', color: 'bg-amber-500' },
