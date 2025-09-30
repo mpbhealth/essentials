@@ -5,18 +5,25 @@ import { Card, CardBody } from '@/components/ui/Card'
 import { benefits, features } from '@/data/essentials'
 import { TrendingUp, Users, Shield, Zap, CircleCheck as CheckCircle, Sparkles, ArrowRight, Crown, Globe, Layers, Smartphone, Heart, DollarSign, Award, Settings } from 'lucide-react'
 
-const benefitIcons = [
-  DollarSign, // Significant Savings
-  Users,      // Total Provider Choice  
-  Shield,     // Peace of Mind
-  Zap         // Flexibility
+const debtDismissalIcons = [
+  DollarSign, // Reduce Medical Bills
+  Shield,     // Financial Protection
+  Users,      // Expert Advocacy
+  CheckCircle // Proven Results
 ]
 
-const featureIcons = [
-  Layers,      // Tiered Membership Options
-  Settings,    // Transparent Sharing Guidelines
-  Smartphone,  // Easy Digital Access
-  Globe        // Eligible medical needs shared worldwide
+const debtDismissalBenefits = [
+  'Reduce Medical Bills',
+  'Financial Protection', 
+  'Expert Advocacy',
+  'Proven Results'
+]
+
+const debtDismissalFeatures = [
+  'Eligibility Assessment',
+  'Professional Negotiation',
+  'Payment Plan Setup', 
+  'Ongoing Support'
 ]
 
 export function BenefitsFeatures() {
@@ -85,28 +92,29 @@ export function BenefitsFeatures() {
           </div>
           
           <h2 className='text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6'>
+            Get help with{' '}
             <span className="text-gradient bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">
-              Community-driven care
+              medical debt
             </span>
             <br />
-            <span className="text-slate-700">meets seamless healthcare</span>
+            <span className="text-slate-700">through our Debt Dismissal program</span>
           </h2>
           
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Experience the perfect blend of community support and cutting-edge technology, 
-            designed to give you complete control over your healthcare journey
+            When medical bills pile up, our Debt Dismissal program helps eligible members 
+            reduce or eliminate large medical and hospital bills through proven advocacy and negotiation
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Benefits Section */}
+          {/* Debt Dismissal Benefits */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             className="relative"
           >
-            {/* Benefits Header */}
+            {/* Debt Dismissal Header */}
             <motion.div variants={itemVariants} className="mb-12">
               <div className="flex items-center gap-3 mb-4">
                 <motion.div
@@ -116,16 +124,16 @@ export function BenefitsFeatures() {
                   <Heart className="w-6 h-6 text-white" />
                 </motion.div>
                 <div>
-                  <h3 className='text-2xl md:text-3xl font-black text-slate-900'>Benefits</h3>
-                  <p className="text-slate-600 font-medium">Community-driven care</p>
+                  <h3 className='text-2xl md:text-3xl font-black text-slate-900'>Debt Relief</h3>
+                  <p className="text-slate-600 font-medium">Financial protection when you need it</p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Benefits Grid */}
+            {/* Debt Dismissal Benefits Grid */}
             <div className="space-y-6">
-              {benefits.map((benefit, i) => {
-                const Icon = benefitIcons[i]
+              {debtDismissalBenefits.map((benefit, i) => {
+                const Icon = debtDismissalIcons[i]
                 const isActive = activeBenefit === i
                 
                 return (
@@ -160,10 +168,10 @@ export function BenefitsFeatures() {
                             
                             {/* Dynamic descriptions */}
                             <p className="text-sm text-slate-600 leading-relaxed">
-                              {i === 0 && "Save hundreds on virtual care visits, prescriptions, and healthcare services compared to traditional options"}
-                              {i === 1 && "Choose any provider you trust - no restrictive networks or limited options holding you back"}
-                              {i === 2 && "24/7 access to care and expert guidance gives you confidence in every health decision"}
-                              {i === 3 && "Adapt your healthcare to life's changes with no long-term commitments or rigid restrictions"}
+                              {i === 0 && "Significantly reduce or potentially eliminate large hospital and medical bills through proven negotiation strategies"}
+                              {i === 1 && "Protect your financial future from overwhelming medical debt that could impact your family's stability"}
+                              {i === 2 && "Professional advocates work directly with hospitals and providers on your behalf to secure the best outcomes"}
+                              {i === 3 && "Track record of successful debt reductions and dismissals for qualifying members nationwide"}
                             </p>
                             
                             {/* Progress Indicator */}
@@ -200,14 +208,14 @@ export function BenefitsFeatures() {
             </div>
           </motion.div>
 
-          {/* Features Section */}
+          {/* Process Section */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             className="relative"
           >
-            {/* Features Header */}
+            {/* Process Header */}
             <motion.div variants={itemVariants} className="mb-12">
               <div className="flex items-center gap-3 mb-4">
                 <motion.div
@@ -217,16 +225,16 @@ export function BenefitsFeatures() {
                   <Crown className="w-6 h-6 text-white" />
                 </motion.div>
                 <div>
-                  <h3 className='text-2xl md:text-3xl font-black text-slate-900'>Features</h3>
-                  <p className="text-slate-600 font-medium">Seamless healthcare</p>
+                  <h3 className='text-2xl md:text-3xl font-black text-slate-900'>Our Process</h3>
+                  <p className="text-slate-600 font-medium">How we help resolve your debt</p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Features Grid */}
+            {/* Process Grid */}
             <div className="space-y-6">
-              {features.map((feature, i) => {
-                const Icon = featureIcons[i]
+              {debtDismissalFeatures.map((feature, i) => {
+                const Icon = debtDismissalIcons[i]
                 const isActive = activeFeature === i
                 
                 return (
@@ -261,10 +269,10 @@ export function BenefitsFeatures() {
                             
                             {/* Dynamic descriptions */}
                             <p className="text-sm text-slate-600 leading-relaxed">
-                              {i === 0 && "Choose the membership level that fits your needs and budget with flexible upgrade options"}
-                              {i === 1 && "Clear, upfront information about what's covered so you always know what to expect"}
-                              {i === 2 && "Access your healthcare services instantly through our intuitive mobile and web platforms"}
-                              {i === 3 && "Get care anywhere in the world with our global network of healthcare providers and partners"}
+                              {i === 0 && "We review your financial situation and medical bills to determine qualification for debt dismissal programs"}
+                              {i === 1 && "Experienced advocates negotiate directly with hospitals and medical providers to reduce or eliminate your debt"}
+                              {i === 2 && "If needed, we help establish manageable payment plans that work within your budget and financial capacity"}
+                              {i === 3 && "Continued support throughout the process with regular updates and guidance until resolution is achieved"}
                             </p>
                             
                             {/* Progress Indicator */}
@@ -313,7 +321,7 @@ export function BenefitsFeatures() {
           <div className="inline-flex items-center gap-6 bg-white/60 backdrop-blur-sm border border-white/30 rounded-3xl px-10 py-6 shadow-lg">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-brand-500 rounded-full animate-pulse" />
-              <span className="font-semibold text-slate-700">Community Benefits</span>
+              <span className="font-semibold text-slate-700">Debt Relief</span>
             </div>
             
             <motion.div
@@ -325,7 +333,7 @@ export function BenefitsFeatures() {
             </motion.div>
             
             <div className="flex items-center gap-3">
-              <span className="font-semibold text-slate-700">Seamless Features</span>
+              <span className="font-semibold text-slate-700">Expert Process</span>
               <div className="w-3 h-3 bg-accent-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
             </div>
             
@@ -337,7 +345,7 @@ export function BenefitsFeatures() {
             </motion.div>
             
             <span className="font-bold text-transparent bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text">
-              Complete Healthcare
+              Financial Protection
             </span>
           </div>
         </motion.div>
