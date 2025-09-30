@@ -104,11 +104,11 @@ export function BenefitsJourney() {
           className='text-center mb-16'
         >
           <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6'>
-            Your{' '}
+            Healthcare that{' '}
             <span className="text-gradient bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">
-              healthcare journey
+              actually works
             </span>
-            {' '}reimagined
+            {' '}for you
           </h2>
           
           <p className='text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4'>
