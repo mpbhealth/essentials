@@ -363,7 +363,6 @@ export function HowItWorks() {
         >
           {[
             { icon: Clock, stat: '< 5 min', label: 'Average signup time' },
-            { icon: Smartphone, stat: '24/7', label: 'Instant access' },
             { icon: Shield, stat: '100%', label: 'Secure checkout' },
             { icon: Star, stat: '4.9/5', label: 'Member satisfaction' }
           ].map((item, i) => {
