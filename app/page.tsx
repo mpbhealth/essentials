@@ -3,7 +3,7 @@ import { SiteHeader } from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/SiteFooter';
 import { StickyCTA } from '@/components/StickyCTA';
 import { FeatureGrid } from '@/components/FeatureGrid';
-import { Services } from '@/components/Services';
+import { BenefitsJourney } from '@/components/BenefitsJourney';
 import { Pricing } from '@/components/Pricing';
 import { BenefitsFeatures } from '@/components/BenefitsFeatures';
 import { HowItWorks } from '@/components/HowItWorks';
@@ -31,7 +31,7 @@ export default function Page() {
       <NavigationSchema />
       <SiteHeader />
       <Hero />
-      <Services />
+      <BenefitsJourney />
       <FeatureGrid />
       <div id='pricing'><Pricing /></div>
       <Testimonials />
