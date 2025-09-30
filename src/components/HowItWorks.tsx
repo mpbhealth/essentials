@@ -288,7 +288,7 @@ export function HowItWorks() {
                               initial={{ opacity: 0, x: -20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: i * 0.3 + fi * 0.1 + 1 }}
-                              className="flex items-center gap-2 text-sm text-slate-600 justify-center"
+                             className="flex items-center gap-2 text-sm text-slate-600"
                             >
                               <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                               {feature}
