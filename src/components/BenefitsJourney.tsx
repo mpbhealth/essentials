@@ -55,7 +55,7 @@ const items = [
     icon: '🛡️',
     title: 'Everything in One Place',
     blurb:
-      'Your records vault and QR LifeCode keep health info organized and shareable in emergencies—so your story travels with you.',
+      'Our intuitive app puts all your healthcare services at your fingertips—book visits, message providers, track benefits, and manage your health from anywhere.',
     sub: 'Protected & portable',
     meta: 'HIPAA-secure'
   }
