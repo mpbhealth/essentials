@@ -23,28 +23,10 @@ export interface StateAvailability {
 
 // Current allowed states based on mpb.health availability
 // This should be managed through admin interface in production
-export const ALLOWED_STATES: StateAvailability[] = [
-  { stateCode: 'FL', stateName: 'Florida', isActive: true },
-  { stateCode: 'TX', stateName: 'Texas', isActive: true },
-  { stateCode: 'CA', stateName: 'California', isActive: true },
-  { stateCode: 'NY', stateName: 'New York', isActive: true },
-  { stateCode: 'GA', stateName: 'Georgia', isActive: true },
-  { stateCode: 'NC', stateName: 'North Carolina', isActive: true },
-  { stateCode: 'SC', stateName: 'South Carolina', isActive: true },
-  { stateCode: 'TN', stateName: 'Tennessee', isActive: true },
-  { stateCode: 'AL', stateName: 'Alabama', isActive: true },
-  { stateCode: 'MS', stateName: 'Mississippi', isActive: true },
-  { stateCode: 'LA', stateName: 'Louisiana', isActive: true },
-  { stateCode: 'AR', stateName: 'Arkansas', isActive: true },
-  { stateCode: 'KY', stateName: 'Kentucky', isActive: true },
-  { stateCode: 'VA', stateName: 'Virginia', isActive: true },
-  { stateCode: 'WV', stateName: 'West Virginia', isActive: true },
-  { stateCode: 'OH', stateName: 'Ohio', isActive: true },
-  { stateCode: 'IN', stateName: 'Indiana', isActive: true },
-  { stateCode: 'IL', stateName: 'Illinois', isActive: true },
-  { stateCode: 'MI', stateName: 'Michigan', isActive: true },
-  { stateCode: 'WI', stateName: 'Wisconsin', isActive: true },
-]
+export const ALLOWED_STATES: StateAvailability[] = ALL_US_STATES.map(state => ({
+  ...state,
+  isActive: true
+}))
 
 // All US states for reference
 export const ALL_US_STATES = [

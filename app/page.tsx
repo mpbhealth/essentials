@@ -30,7 +30,6 @@ export default function Page() {
     <main id='main'>
       <script type='application/ld+json' dangerouslySetInnerHTML={{__html: JSON.stringify(productLd)}} />
       <NavigationSchema />
-      <GeoRestrictionBanner />
       <SiteHeader />
       <Hero />
       <BenefitsJourney />
