@@ -12,7 +12,6 @@ import { Disclaimer } from '@/components/Disclaimer';
 import { Testimonials } from '@/components/Testimonials';
 import { LeadForm } from '@/components/LeadForm';
 import { CookieBanner } from '@/components/CookieBanner';
-import { JotformAgent } from '@/components/JotformAgent';
 import { NavigationSchema } from '@/components/InternalLinking';
 import { GeoRestrictionBanner } from '@/components/GeoRestriction';
 
@@ -43,7 +42,6 @@ export default function Page() {
       <Disclaimer />
       <SiteFooter />
       <StickyCTA />
-      <JotformAgent />
       <CookieBanner />
     </main>
   );
