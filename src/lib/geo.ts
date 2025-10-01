@@ -21,13 +21,6 @@ export interface StateAvailability {
   notes?: string
 }
 
-// Current allowed states based on mpb.health availability
-// This should be managed through admin interface in production
-export const ALLOWED_STATES: StateAvailability[] = ALL_US_STATES.map(state => ({
-  ...state,
-  isActive: true
-}))
-
 // All US states for reference
 export const ALL_US_STATES = [
   { stateCode: 'AL', stateName: 'Alabama' },
@@ -81,6 +74,13 @@ export const ALL_US_STATES = [
   { stateCode: 'WI', stateName: 'Wisconsin' },
   { stateCode: 'WY', stateName: 'Wyoming' },
 ]
+
+// Current allowed states based on mpb.health availability
+// This should be managed through admin interface in production
+export const ALLOWED_STATES: StateAvailability[] = ALL_US_STATES.map(state => ({
+  ...state,
+  isActive: true
+}))
 
 class GeoLocationService {
   private static instance: GeoLocationService
