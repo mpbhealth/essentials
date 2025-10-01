@@ -1,4 +1,48 @@
-export const price = { display: '$49.95 / month', startingAt: 49.95 }
+export const pricing = {
+  enrollmentFee: {
+    amount: 25.00,
+    display: '$25.00',
+    period: 'One-time',
+    description: 'Enrollment fee'
+  },
+  plans: [
+    {
+      id: 'member-only',
+      benefitId: 449,
+      name: 'Member Only',
+      price: 49.95,
+      display: '$49.95',
+      period: 'Monthly',
+      description: 'Individual coverage',
+      popular: true
+    },
+    {
+      id: 'member-plus-one',
+      benefitId: 145,
+      name: 'Member + One',
+      price: 59.95,
+      display: '$59.95',
+      period: 'Monthly',
+      description: 'Member plus spouse or child'
+    },
+    {
+      id: 'member-family',
+      benefitId: 3391,
+      name: 'Member + Family',
+      price: 69.95,
+      display: '$69.95',
+      period: 'Monthly',
+      description: 'Complete family coverage'
+    }
+  ]
+}
+
+// Backwards compatibility
+export const price = { 
+  display: '$49.95 / month', 
+  startingAt: 49.95,
+  monthly: '$49.95/mo'
+}
 
 export const bullets = [
   '24/7/365 Virtual Urgent Care',

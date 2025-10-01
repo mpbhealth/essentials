@@ -3,7 +3,7 @@ import React from 'react'
 import { motion, useMotionValue, useTransform, useInView } from 'framer-motion'
 import { Button, GhostButton } from '@/components/ui/Button'
 import { enrollClick } from '@/lib/track'
-import { price, pitch } from '@/data/essentials'
+import { pricing, pitch } from '@/data/essentials'
 import { ArrowRight, Shield, Clock, Users, Sparkles, Heart, Stethoscope, Phone, Video, MessageSquare, Zap, Star, Award, TrendingUp, Globe, Activity, UserCheck } from 'lucide-react'
 
 const FloatingElement = ({ children, delay = 0, duration = 4 }: { children: React.ReactNode, delay?: number, duration?: number }) => (
@@ -278,7 +278,7 @@ export function Hero() {
                 className="text-lg px-8 py-4 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
               >
                 <Zap className="w-5 h-5 mr-2" />
-                Enroll Today — {price.monthly}
+                Enroll Today — Starting ${pricing.plans[0].price}/mo
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               <GhostButton className="text-lg px-8 py-4 border-2">

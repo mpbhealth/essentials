@@ -1,0 +1,5 @@
+"Product ID","Label","Type","Price","Benefit ID","Benefit Label","Period ID","Period Label","Include For Payments","Exclude For Payments","Total Payments","Commissionable Amount","Is Display Online","Display Start","Display Stop","State","First 3 of Zipcode","Full Zipcode","Member Age Minimum","Member Age Maximum","Member Smoker","Member Gender","Member Height Minimum","Member Height Maximum","Member Weight Minimum","Member Weight Maximum","Has Spouse","Spouse Age Minimum","Spouse Age Maximum","Spouse Smoker","Spouse Gender","Spouse Height Minimum","Spouse Height Maximum","Spouse Weight Minimum","Spouse Weight Maximum","Child Count Minimum","Child Count Maximum"
+42463,ESSENTIALS,Enrollment Fee,25.00,,,7,One-Time,1,,,,Yes,,,Default,,,,,No,,,,,,No,,,No,,,,,
+42463,ESSENTIALS,Product,49.95,449,Member Only,1,Monthly,,1,,,Yes,,,Default,,,,,No,,,,,,No,,,No,,,,,
+42463,ESSENTIALS,Product,59.95,145,Member plus One (Spouse or Child),1,Monthly,,1,,,Yes,,,Default,,,,,No,,,,,,No,,,No,,,,,
+42463,ESSENTIALS,Product,69.95,3391,Member + Family,1,Monthly,,1,,,Yes,,,Default,,,,,No,,,,,,No,,,No,,,,,
