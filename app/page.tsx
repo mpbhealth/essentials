@@ -14,6 +14,7 @@ import { LeadForm } from '@/components/LeadForm';
 import { CookieBanner } from '@/components/CookieBanner';
 import { JotformAgent } from '@/components/JotformAgent';
 import { NavigationSchema } from '@/components/InternalLinking';
+import { GeoRestrictionBanner } from '@/components/GeoRestriction';
 
 export default function Page() {
   const productLd = {
@@ -29,6 +30,7 @@ export default function Page() {
     <main id='main'>
       <script type='application/ld+json' dangerouslySetInnerHTML={{__html: JSON.stringify(productLd)}} />
       <NavigationSchema />
+      <GeoRestrictionBanner />
       <SiteHeader />
       <Hero />
       <BenefitsJourney />

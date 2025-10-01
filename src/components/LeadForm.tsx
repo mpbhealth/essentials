@@ -1,9 +1,18 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
+import { GeoRestrictionInline } from '@/components/GeoRestriction'
+import { useGeoLocation } from '@/hooks/useGeoLocation'
 import { MessageSquare, CircleCheck as CheckCircle, Sparkles, Users, Clock, Shield, Phone, Mail, MapPin } from 'lucide-react'
 
 export function LeadForm() {
+  const { isRestricted, isLoading } = useGeoLocation()
+
+  // Show geo restriction message if user is from unsupported state
+  if (!isLoading && isRestricted) {
+    return <GeoRestrictionInline />
+  }
+
   const advisorStats = [
     { icon: Users, label: 'Healthcare Experts', value: '50+' },
     { icon: Clock, label: 'Avg Response Time', value: '<2hr' },
