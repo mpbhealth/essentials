@@ -8,21 +8,7 @@ import {
   updateStateAvailability,
   type StateAvailability 
 } from '@/lib/geo'
-import { 
-  Settings, 
-  MapPin, 
-  CheckCircle2, 
-  XCircle, 
-  Plus, 
-  Edit3, 
-  Save, 
-  X, 
-  Search,
-  Filter,
-  Users,
-  Calendar,
-  AlertCircle
-} from 'lucide-react'
+import { Settings, MapPin, CircleCheck as CheckCircle2, Circle as XCircle, Plus, CreditCard as Edit3, Save, X, Search, Filter, Users, Calendar, CircleAlert as AlertCircle } from 'lucide-react'
 
 interface StateManagementProps {
   isAdmin?: boolean

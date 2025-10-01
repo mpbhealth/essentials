@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useGeoForm, useAvailableStates } from '@/hooks/useGeoLocation'
-import { ChevronDown, MapPin, CheckCircle2, Search } from 'lucide-react'
+import { ChevronDown, MapPin, CircleCheck as CheckCircle2, Search } from 'lucide-react'
 
 interface StateSelectorProps {
   value?: string

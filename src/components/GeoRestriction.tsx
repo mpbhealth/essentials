@@ -3,7 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardBody } from '@/components/ui/Card'
 import { useGeoLocation } from '@/hooks/useGeoLocation'
-import { MapPin, AlertCircle, Mail, Phone, Bell, Clock, Users, ArrowRight } from 'lucide-react'
+import { MapPin, CircleAlert as AlertCircle, Mail, Phone, Bell, Clock, Users, ArrowRight } from 'lucide-react'
 
 export function GeoRestrictionBanner() {
   const { location, isRestricted, isLoading } = useGeoLocation()
