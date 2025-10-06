@@ -25,23 +25,19 @@ export const frontmatter = {
     },
     {
       q: "What does Essentials generally help with?",
-      a: "Everyday healthcare needs and virtual care. Review the plan document for specifics."
+      a: "Everyday healthcare needs and virtual care. Review official program documents for specifics and limits."
     },
     {
       q: "Can I keep my current doctor?",
-      a: "Network and access details are outlined during application; review before joining."
+      a: "Network and access details are outlined during application. Review them carefully before joining."
     },
     {
-      q: "How fast can I start?",
-      a: "After eligibility review and contributions are set, you receive onboarding instructions."
+      q: "How soon can I start?",
+      a: "After eligibility review and contributions are set, onboarding instructions are provided."
     },
     {
-      q: "Are there eligibility requirements?",
-      a: "Yes. Review the eligibility page for specific requirements before applying."
-    },
-    {
-      q: "How do monthly contributions work?",
-      a: "Contributions are set based on household size and age. See the pricing page for details."
+      q: "Where are the official documents?",
+      a: "See the Disclosures page for links to program guidelines and member materials."
     }
   ]
 };

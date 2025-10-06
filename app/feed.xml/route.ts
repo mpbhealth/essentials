@@ -1,34 +1,26 @@
-import { contentRegistry } from '@/lib/content-registry';
-import { SITE } from '@/lib/site';
+import { NextResponse } from "next/server";
+import { SITE } from "@/lib/site";
+import { PAGES } from "@/lib/content-registry";
 
 export async function GET() {
-  const rss = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>${SITE.brand}</title>
-    <link>${SITE.domain}</link>
-    <description>Medical cost sharing for everyday healthcare needs</description>
-    <language>en-us</language>
-    <atom:link href="${SITE.domain}/feed.xml" rel="self" type="application/rss+xml"/>
-    ${contentRegistry
-      .map(
-        page => `
+  const items = PAGES.map(p => `
     <item>
-      <title>${page.title}</title>
-      <link>${SITE.domain}${page.slug}</link>
-      <description>${page.description}</description>
-      <pubDate>${new Date(page.lastModified).toUTCString()}</pubDate>
-      <guid isPermaLink="true">${SITE.domain}${page.slug}</guid>
-    </item>`
-      )
-      .join('')}
-  </channel>
-</rss>`;
+      <title>${p.title}</title>
+      <link>${SITE.domain}${p.url}</link>
+      <guid>${SITE.domain}${p.url}</guid>
+      <pubDate>${new Date(p.lastmod ?? Date.now()).toUTCString()}</pubDate>
+      ${p.description ? `<description><![CDATA[${p.description}]]></description>` : ""}
+    </item>`).join("");
 
-  return new Response(rss, {
-    headers: {
-      'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
-    },
-  });
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+  <rss version="2.0">
+    <channel>
+      <title>${SITE.brand} — Updates</title>
+      <link>${SITE.domain}</link>
+      <description>New pages and updates for Essentials.</description>
+      ${items}
+    </channel>
+  </rss>`;
+
+  return new NextResponse(xml, { headers: { "Content-Type": "application/rss+xml; charset=utf-8" }});
 }

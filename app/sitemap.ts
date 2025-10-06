@@ -1,12 +1,11 @@
-import { MetadataRoute } from 'next';
-import { contentRegistry } from '@/lib/content-registry';
-import { SITE } from '@/lib/site';
+import { SITE } from "@/lib/site";
+import { PAGES } from "@/lib/content-registry";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return contentRegistry.map(page => ({
-    url: `${SITE.domain}${page.slug}`,
-    lastModified: new Date(page.lastModified),
-    changeFrequency: 'weekly' as const,
-    priority: page.slug === '/' ? 1.0 : 0.8,
+export default async function sitemap() {
+  return PAGES.map(p => ({
+    url: `${SITE.domain}${p.url}`,
+    lastModified: p.lastmod ?? new Date().toISOString(),
+    changeFrequency: "weekly" as const,
+    priority: p.url === "/" ? 1.0 : 0.7
   }));
 }

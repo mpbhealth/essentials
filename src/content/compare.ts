@@ -2,38 +2,38 @@ export const frontmatter = {
   title: "Essentials vs. Traditional Insurance",
   description: "Understand the key differences between medical cost sharing and traditional health insurance.",
   slug: "/compare/",
+  keyFacts: [
+    "Essentials: medical cost sharing; not insurance.",
+    "Insurance: risk transfer via a regulated policy.",
+    "Compare based on needs and preferences."
+  ],
   comparison: {
-    conclusion: "Essentials is a medical cost sharing program focused on everyday healthcare needs, while traditional insurance provides comprehensive coverage with regulatory protections. Neither is universally better—the right choice depends on your healthcare needs and budget.",
+    conclusion: "Essentials offers a cost sharing approach for routine needs; traditional insurance is a regulated insurance product. Review official documents before deciding.",
     rows: [
       {
-        aspect: "Type of Coverage",
-        essentials: "Medical cost sharing community (not insurance)",
-        traditional: "Regulated health insurance product"
+        aspect: "Nature",
+        essentials: "Voluntary sharing community",
+        traditional: "Insurance policy under regulation"
       },
       {
-        aspect: "Regulatory Oversight",
-        essentials: "Not subject to insurance regulations",
-        traditional: "Regulated by state and federal agencies"
+        aspect: "Payments",
+        essentials: "Monthly contributions",
+        traditional: "Premiums"
       },
       {
-        aspect: "Focus Area",
-        essentials: "Everyday healthcare and virtual visits",
-        traditional: "Comprehensive medical coverage"
+        aspect: "Guarantee",
+        essentials: "No guarantee of payment",
+        traditional: "Contractual coverage terms"
       },
       {
-        aspect: "Contribution vs. Premium",
-        essentials: "Monthly contributions (not premiums)",
-        traditional: "Monthly insurance premiums"
+        aspect: "Guidelines/Terms",
+        essentials: "Program guidelines",
+        traditional: "Policy documents"
       },
       {
-        aspect: "Cost Sharing Approach",
-        essentials: "Voluntary community-based sharing",
-        traditional: "Contractual obligation to pay claims"
-      },
-      {
-        aspect: "Network Requirements",
-        essentials: "Varies by program (review details)",
-        traditional: "Typically has defined provider networks"
+        aspect: "Scope",
+        essentials: "Routine needs focus (see docs)",
+        traditional: "Varies by policy and carrier"
       }
     ]
   },

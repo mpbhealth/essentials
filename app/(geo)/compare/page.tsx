@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
+import { KeyFacts } from '@/components/KeyFacts';
 import { ComparisonTable } from '@/components/ComparisonTable';
 import { FAQSimple } from '@/components/FAQSimple';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
@@ -38,6 +39,8 @@ export default function ComparePage() {
           { name: "Home", href: "/" },
           { name: "Compare", href: "/compare/" },
         ]} />
+
+        <KeyFacts items={frontmatter.keyFacts} />
 
         <Prose>
           <h1>{frontmatter.title}</h1>
