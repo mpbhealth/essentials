@@ -43,16 +43,13 @@ export function SiteHeader() {
             whileTap={{ scale: 0.98 }}
           >
            <div className='relative group-hover:scale-105 transition-transform duration-300'>
-             <img 
+             <img
               src="/MPB-Health-No-background.png"
                alt="MPB Health"
                className='h-6 sm:h-8 md:h-10 w-auto object-contain'
              />
              <div className='absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-r from-brand-500 to-accent-500 rounded-lg blur-lg transition-opacity duration-300' />
            </div>
-           <div className='hidden sm:block'>
-             <div className='text-xs text-slate-500 font-medium'>Essentials</div>
-            </div>
           </motion.a>
 
           {/* Desktop Navigation */}
