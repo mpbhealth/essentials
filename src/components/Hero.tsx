@@ -309,20 +309,47 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Service Cards */}
+          {/* Right Column - Phone Mockup */}
           <div className="lg:col-span-5">
-            <div className="grid gap-4">
-              {services.map((service, i) => (
-                <InteractiveServiceCard
-                  key={i}
-                  icon={service.icon}
-                  title={service.title}
-                  description={service.description}
-                  color={service.color}
-                  delay={i * 0.2}
+            <motion.div
+              initial={{ opacity: 0, x: 50, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 1, delay: 0.5, type: "spring", stiffness: 80 }}
+              className="relative"
+            >
+              <div className="relative z-10">
+                <motion.img
+                  src="/Cell Phone(1).png"
+                  alt="MPB Health mobile app dashboard"
+                  className="w-full max-w-md mx-auto drop-shadow-2xl"
+                  whileHover={{ scale: 1.02, rotate: 2 }}
+                  transition={{ duration: 0.3 }}
                 />
-              ))}
-            </div>
+              </div>
+
+              {/* Floating Glow Effect */}
+              <motion.div
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-brand-300 to-accent-300 rounded-full blur-3xl -z-10"
+              />
+
+              {/* Decorative Elements */}
+              <FloatingElement delay={0} duration={5}>
+                <div className="absolute top-10 -left-10 w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 shadow-xl flex items-center justify-center">
+                  <Stethoscope className="w-8 h-8 text-white" />
+                </div>
+              </FloatingElement>
+
+              <FloatingElement delay={1} duration={6}>
+                <div className="absolute bottom-20 -right-10 w-16 h-16 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 shadow-xl flex items-center justify-center">
+                  <Heart className="w-8 h-8 text-white" />
+                </div>
+              </FloatingElement>
+            </motion.div>
           </div>
         </div>
       </div>
