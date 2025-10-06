@@ -1,17 +1,68 @@
-import { MetadataRoute } from 'next'
+import { SITE } from '@/lib/site';
+import type { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://essentials.mpb.health'
-  
-  return {
-    rules: [
+  const allowTraining = process.env.ALLOW_TRAINING === "true";
+
+  const rules: MetadataRoute.Robots['rules'] = [
+    {
+      userAgent: "*",
+      allow: "/",
+      disallow: ['/admin/'],
+    },
+    {
+      userAgent: "Googlebot",
+      allow: "/",
+    },
+    {
+      userAgent: "Bingbot",
+      allow: "/",
+    },
+  ];
+
+  if (allowTraining) {
+    rules.push(
       {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/admin/'],
+        userAgent: "Google-Extended",
+        allow: "/",
       },
-    ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+      {
+        userAgent: "GPTBot",
+        allow: "/",
+      },
+      {
+        userAgent: "PerplexityBot",
+        allow: "/",
+      },
+      {
+        userAgent: "ClaudeBot",
+        allow: "/",
+      }
+    );
+  } else {
+    rules.push(
+      {
+        userAgent: "Google-Extended",
+        disallow: "/",
+      },
+      {
+        userAgent: "GPTBot",
+        disallow: "/",
+      },
+      {
+        userAgent: "PerplexityBot",
+        disallow: "/",
+      },
+      {
+        userAgent: "ClaudeBot",
+        disallow: "/",
+      }
+    );
   }
+
+  return {
+    rules,
+    sitemap: `${SITE.domain}/sitemap.xml`,
+    host: SITE.domain,
+  };
 }

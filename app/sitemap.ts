@@ -1,20 +1,12 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
+import { contentRegistry } from '@/lib/content-registry';
+import { SITE } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://essentials.mpb.health'
-  
-  return [
-    {
-      url: `${baseUrl}/`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/thank-you/`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    }
-  ]
+  return contentRegistry.map(page => ({
+    url: `${SITE.domain}${page.slug}`,
+    lastModified: new Date(page.lastModified),
+    changeFrequency: 'weekly' as const,
+    priority: page.slug === '/' ? 1.0 : 0.8,
+  }));
 }
