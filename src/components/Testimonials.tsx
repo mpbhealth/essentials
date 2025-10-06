@@ -182,99 +182,110 @@ export function Testimonials() {
           })}
         </motion.div>
 
-        {/* Championship Testimonial */}
-        <div className="relative max-w-5xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+        {/* Championship 3-Card Carousel */}
+        <div className="relative max-w-7xl mx-auto mb-16">
+          <div
+            className="relative overflow-hidden"
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
           >
-            {/* Championship Card */}
-            <div className="relative bg-white border border-slate-200 rounded-3xl shadow-xl overflow-hidden">
-              {/* Quote Icon */}
-              <div className="absolute top-8 left-8 w-16 h-16 rounded-2xl bg-gradient-to-r from-brand-500 to-accent-500 shadow-lg flex items-center justify-center">
-                <Quote className="w-8 h-8 text-white" />
-              </div>
-
-              {/* Content */}
-              <div className="relative z-10 p-8 md:p-16 text-center">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentIndex}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {/* Championship Stars */}
-                    <div className="flex justify-center gap-1 mb-8">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-6 h-6 text-yellow-400" fill="currentColor" />
-                      ))}
-                    </div>
-
-                    {/* Championship Quote */}
-                    <blockquote className='text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-8 leading-tight max-w-4xl mx-auto'>
-                      "{currentTestimonial.quote}"
-                    </blockquote>
-
-                    {/* Championship Member */}
-                    <div className="flex items-center justify-center gap-4">
-                      {/* Avatar */}
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                        {currentTestimonial.name.charAt(0)}
+            {/* Cards Container */}
+            <div className="relative">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="grid md:grid-cols-3 gap-6"
+                >
+                  {testimonials.map((testimonial, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                      className="relative bg-white border border-slate-200 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group"
+                    >
+                      {/* Quote Icon */}
+                      <div className="absolute top-6 right-6 w-12 h-12 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 shadow-md flex items-center justify-center opacity-10 group-hover:opacity-20 transition-opacity duration-300">
+                        <Quote className="w-6 h-6 text-white" />
                       </div>
-                      
-                      {/* Member Details */}
-                      <div className="text-left">
-                        <div className='text-xl font-black text-slate-900'>
-                          {currentTestimonial.name}
+
+                      {/* Content */}
+                      <div className="relative z-10 p-8">
+                        {/* Stars */}
+                        <div className="flex gap-1 mb-4">
+                          {[...Array(5)].map((_, starIdx) => (
+                            <Star key={starIdx} className="w-4 h-4 text-yellow-400" fill="currentColor" />
+                          ))}
                         </div>
-                        <div className='text-slate-600 font-semibold flex items-center gap-2'>
-                          <CheckCircle className="w-4 h-4 text-green-500" />
-                          {currentTestimonial.role}
+
+                        {/* Quote */}
+                        <blockquote className='text-lg font-bold text-slate-900 mb-6 leading-relaxed min-h-[120px]'>
+                          "{testimonial.quote}"
+                        </blockquote>
+
+                        {/* Member */}
+                        <div className="flex items-center gap-3 pt-6 border-t border-slate-100">
+                          {/* Avatar */}
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-brand-500 to-accent-500 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                            {testimonial.name.charAt(0)}
+                          </div>
+
+                          {/* Member Details */}
+                          <div>
+                            <div className='text-base font-black text-slate-900'>
+                              {testimonial.name}
+                            </div>
+                            <div className='text-sm text-slate-600 font-medium flex items-center gap-1'>
+                              <CheckCircle className="w-3 h-3 text-green-500" />
+                              {testimonial.role}
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
 
-              {/* Championship Navigation */}
-              <button
-                onClick={prevTestimonial}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-600 hover:text-brand-600 hover:border-brand-300 transition-all duration-200"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-
-              <button
-                onClick={nextTestimonial}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center text-slate-600 hover:text-brand-600 hover:border-brand-300 transition-all duration-200"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
+                      {/* Hover Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-brand-50/50 to-accent-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
             </div>
-          </motion.div>
 
-          {/* Championship Progress */}
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevTestimonial}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-white border-2 border-slate-200 shadow-xl flex items-center justify-center text-slate-600 hover:text-brand-600 hover:border-brand-400 hover:scale-110 transition-all duration-200 z-20"
+              aria-label="Previous testimonials"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <button
+              onClick={nextTestimonial}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-white border-2 border-slate-200 shadow-xl flex items-center justify-center text-slate-600 hover:text-brand-600 hover:border-brand-400 hover:scale-110 transition-all duration-200 z-20"
+              aria-label="Next testimonials"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Progress Indicators */}
           <div className='mt-8 flex justify-center gap-2'>
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrentIndex(i)}
                 className={`transition-all duration-300 rounded-full ${
-                  i === currentIndex 
-                    ? 'w-8 h-2 bg-gradient-to-r from-brand-500 to-accent-500' 
+                  i === currentIndex
+                    ? 'w-8 h-2 bg-gradient-to-r from-brand-500 to-accent-500'
                     : 'w-2 h-2 bg-slate-300 hover:bg-slate-400'
                 }`}
-                aria-label={`View testimonial ${i + 1}`}
+                aria-label={`View testimonial set ${i + 1}`}
               />
             ))}
           </div>
