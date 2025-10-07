@@ -149,169 +149,179 @@ export function FeatureGrid() {
           })}
         </motion.div>
 
-        {/* Bottom CTA */}
+        {/* Explore Your Benefits Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-16"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-20 max-w-6xl mx-auto"
         >
-          <div className="space-y-8">
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-2xl px-8 py-4 shadow-xl"
-            >
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 shadow-2xl">
+            {/* Animated Background */}
+            <div className="absolute inset-0">
               <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              >
-                <Sparkles className="w-5 h-5" />
-              </motion.div>
-              <span className="font-bold text-lg">All benefits included in your membership</span>
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-3 h-3 bg-yellow-300 rounded-full"
+                animate={{
+                  backgroundPosition: ['0% 0%', '100% 100%'],
+                  opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 bg-gradient-to-br from-brand-500/20 via-transparent to-accent-500/20"
+                style={{ backgroundSize: '200% 200%' }}
               />
-            </motion.div>
-            
-            {/* Championship Related Content Links */}
-            <div className="max-w-5xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="glass border border-white/30 rounded-3xl shadow-2xl backdrop-blur-xl overflow-hidden relative"
-              >
-                {/* Background Pattern */}
-                <div className="absolute inset-0 bg-gradient-to-br from-brand-50/40 to-accent-50/40" />
-                
-                {/* Floating Elements */}
-                <motion.div 
-                  animate={{ y: [0, -8, 0], rotate: [0, 10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute top-6 right-6 w-12 h-12 rounded-2xl bg-gradient-to-r from-brand-400 to-accent-500 shadow-xl flex items-center justify-center opacity-30"
+            </div>
+
+            <div className="relative z-10 p-8 md:p-12 lg:p-16">
+              {/* Header */}
+              <div className="text-center mb-12">
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-6"
                 >
-                  <Sparkles className="w-6 h-6 text-white" />
+                  <CheckCircle className="w-5 h-5 text-accent-400" />
+                  <span className="font-bold text-white">All benefits included in your membership</span>
+                  <motion.div
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <Sparkles className="w-5 h-5 text-yellow-300" />
+                  </motion.div>
                 </motion.div>
 
-                <div className="relative z-10 p-8 md:p-12">
-                  <motion.h3 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-2xl md:text-3xl font-black text-slate-900 mb-8 text-center"
-                  >
-                    <span className="text-gradient bg-gradient-to-r from-brand-600 to-accent-500 bg-clip-text text-transparent">
-                      Learn More About Your Benefits
-                    </span>
-                  </motion.h3>
-                  
-                  {/* Championship Links Grid */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {[
-                      {
-                        href: "/#pricing",
-                        title: "View Membership Pricing",
-                        description: "Transparent pricing for all Essentials benefits",
-                        image: "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=400",
-                        color: "from-green-500 to-emerald-500"
-                      },
-                      {
-                        href: "/#how-it-works",
-                        title: "How to Get Started",
-                        description: "Simple 3-step enrollment process",
-                        image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400",
-                        color: "from-blue-500 to-cyan-500"
-                      },
-                      {
-                        href: "/#services",
-                        title: "Virtual Healthcare Services",
-                        description: "24/7 urgent care, primary care, and mental health",
-                        image: "https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg?auto=compress&cs=tinysrgb&w=400",
-                        color: "from-red-500 to-pink-500"
-                      },
-                      {
-                        href: "/#faq",
-                        title: "Frequently Asked Questions",
-                        description: "Common questions about membership benefits",
-                        image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=400",
-                        color: "from-purple-500 to-indigo-500"
-                      }
-                    ].map((link, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: i * 0.1 + 0.5 }}
-                        className="group"
+                <motion.h3
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4"
+                >
+                  Explore Your Benefits
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="text-lg text-slate-300 max-w-2xl mx-auto"
+                >
+                  Everything you need to know about your healthcare membership
+                </motion.p>
+              </div>
+
+              {/* Benefits Grid */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                {[
+                  {
+                    href: "/#pricing",
+                    title: "Membership Pricing",
+                    description: "Transparent pricing for all benefits",
+                    image: "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    icon: CreditCard,
+                    gradient: "from-emerald-400 to-teal-500"
+                  },
+                  {
+                    href: "/#how-it-works",
+                    title: "Get Started",
+                    description: "Simple 3-step enrollment",
+                    image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    icon: ArrowRight,
+                    gradient: "from-blue-400 to-cyan-500"
+                  },
+                  {
+                    href: "/#services",
+                    title: "Healthcare Services",
+                    description: "24/7 virtual care access",
+                    image: "https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    icon: Heart,
+                    gradient: "from-rose-400 to-pink-500"
+                  },
+                  {
+                    href: "/#faq",
+                    title: "FAQs",
+                    description: "Common questions answered",
+                    image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    icon: Shield,
+                    gradient: "from-amber-400 to-orange-500"
+                  }
+                ].map((item, i) => {
+                  const Icon = item.icon
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      className="group"
+                    >
+                      <StrategicLink
+                        href={item.href}
+                        variant="card"
+                        className="relative h-full overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 group-hover:shadow-2xl group-hover:scale-105"
                       >
-                        <StrategicLink
-                          href={link.href}
-                          variant="card"
-                          className="relative overflow-hidden border-2 border-transparent hover:border-brand-300 transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1"
-                        >
-                          {/* Background Pattern */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-slate-50/80 group-hover:from-white group-hover:to-brand-50/50 transition-all duration-300" />
+                        {/* Image Background */}
+                        <div className="relative h-32 overflow-hidden">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-60 group-hover:opacity-40 transition-opacity duration-300`} />
 
-                          <div className="relative z-10 flex items-start gap-4">
-                            {/* Professional Image */}
+                          {/* Icon Overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center">
                             <motion.div
-                              whileHover={{ scale: 1.05 }}
-                              transition={{ duration: 0.3 }}
-                              className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg flex-shrink-0 group-hover:shadow-xl transition-shadow duration-300"
+                              whileHover={{ scale: 1.2, rotate: 360 }}
+                              transition={{ duration: 0.6 }}
+                              className="w-16 h-16 rounded-xl bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center"
                             >
-                              <img
-                                src={link.image}
-                                alt={link.title}
-                                className="w-full h-full object-cover"
-                              />
-                              <div className={`absolute inset-0 bg-gradient-to-r ${link.color} opacity-30 group-hover:opacity-20 transition-opacity duration-300`} />
-                            </motion.div>
-
-                            <div className="flex-1">
-                              <h4 className="font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
-                                {link.title}
-                              </h4>
-                              <p className="text-sm text-slate-600 leading-relaxed">
-                                {link.description}
-                              </p>
-                            </div>
-
-                            {/* Arrow */}
-                            <motion.div
-                              animate={{ x: [0, 5, 0] }}
-                              transition={{ duration: 2, repeat: Infinity }}
-                              className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            >
-                              <ArrowRight className="w-5 h-5 text-brand-500" />
+                              <Icon className={`w-8 h-8 bg-gradient-to-br ${item.gradient} bg-clip-text text-transparent`} style={{ WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
                             </motion.div>
                           </div>
+                        </div>
 
-                          {/* Hover Glow Effect */}
-                          <div className={`absolute inset-0 bg-gradient-to-r ${link.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none`} />
-                        </StrategicLink>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Bottom decoration */}
-                <motion.div 
-                  animate={{ y: [0, 5, 0], rotate: [0, -5, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                  className="absolute -bottom-6 -left-6 w-12 h-12 rounded-2xl bg-gradient-to-r from-accent-400 to-accent-500 shadow-lg flex items-center justify-center opacity-30"
-                >
-                  <CheckCircle className="w-6 h-6 text-white" />
-                </motion.div>
-              </motion.div>
+                        {/* Content */}
+                        <div className="p-5">
+                          <h4 className="font-black text-white text-lg mb-2 group-hover:text-accent-300 transition-colors">
+                            {item.title}
+                          </h4>
+                          <p className="text-sm text-slate-300 leading-relaxed">
+                            {item.description}
+                          </p>
+
+                          {/* Hover Arrow */}
+                          <motion.div
+                            initial={{ x: -10, opacity: 0 }}
+                            whileHover={{ x: 0, opacity: 1 }}
+                            className="mt-4 flex items-center gap-2 text-accent-300 font-semibold text-sm"
+                          >
+                            <span>Learn more</span>
+                            <ArrowRight className="w-4 h-4" />
+                          </motion.div>
+                        </div>
+
+                        {/* Glow Effect */}
+                        <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none`} />
+                      </StrategicLink>
+                    </motion.div>
+                  )
+                })}
+              </div>
             </div>
+
+            {/* Decorative Elements */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-brand-400 to-accent-500 rounded-full blur-3xl opacity-20"
+            />
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-br from-accent-400 to-brand-500 rounded-full blur-3xl opacity-20"
+            />
           </div>
         </motion.div>
       </div>
