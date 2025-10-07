@@ -219,28 +219,28 @@ export function FeatureGrid() {
                         href: "/#pricing",
                         title: "View Membership Pricing",
                         description: "Transparent pricing for all Essentials benefits",
-                        icon: "💰",
+                        image: "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=400",
                         color: "from-green-500 to-emerald-500"
                       },
                       {
-                        href: "/#how-it-works", 
+                        href: "/#how-it-works",
                         title: "How to Get Started",
                         description: "Simple 3-step enrollment process",
-                        icon: "🚀",
+                        image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400",
                         color: "from-blue-500 to-cyan-500"
                       },
                       {
                         href: "/#services",
-                        title: "Virtual Healthcare Services", 
+                        title: "Virtual Healthcare Services",
                         description: "24/7 urgent care, primary care, and mental health",
-                        icon: "🩺",
+                        image: "https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg?auto=compress&cs=tinysrgb&w=400",
                         color: "from-red-500 to-pink-500"
                       },
                       {
                         href: "/#faq",
                         title: "Frequently Asked Questions",
                         description: "Common questions about membership benefits",
-                        icon: "❓",
+                        image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=400",
                         color: "from-purple-500 to-indigo-500"
                       }
                     ].map((link, i) => (
@@ -252,24 +252,29 @@ export function FeatureGrid() {
                         transition={{ duration: 0.6, delay: i * 0.1 + 0.5 }}
                         className="group"
                       >
-                        <StrategicLink 
+                        <StrategicLink
                           href={link.href}
                           variant="card"
                           className="relative overflow-hidden border-2 border-transparent hover:border-brand-300 transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1"
                         >
                           {/* Background Pattern */}
                           <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-slate-50/80 group-hover:from-white group-hover:to-brand-50/50 transition-all duration-300" />
-                          
+
                           <div className="relative z-10 flex items-start gap-4">
-                            {/* Animated Icon */}
+                            {/* Professional Image */}
                             <motion.div
-                              whileHover={{ scale: 1.2, rotate: [0, -10, 10, 0] }}
-                              transition={{ duration: 0.5 }}
-                              className={`w-14 h-14 rounded-2xl bg-gradient-to-r ${link.color} shadow-lg flex items-center justify-center text-xl group-hover:shadow-xl transition-shadow duration-300`}
+                              whileHover={{ scale: 1.05 }}
+                              transition={{ duration: 0.3 }}
+                              className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-lg flex-shrink-0 group-hover:shadow-xl transition-shadow duration-300"
                             >
-                              {link.icon}
+                              <img
+                                src={link.image}
+                                alt={link.title}
+                                className="w-full h-full object-cover"
+                              />
+                              <div className={`absolute inset-0 bg-gradient-to-r ${link.color} opacity-30 group-hover:opacity-20 transition-opacity duration-300`} />
                             </motion.div>
-                            
+
                             <div className="flex-1">
                               <h4 className="font-bold text-slate-900 mb-2 group-hover:text-brand-700 transition-colors">
                                 {link.title}
@@ -278,7 +283,7 @@ export function FeatureGrid() {
                                 {link.description}
                               </p>
                             </div>
-                            
+
                             {/* Arrow */}
                             <motion.div
                               animate={{ x: [0, 5, 0] }}
@@ -288,7 +293,7 @@ export function FeatureGrid() {
                               <ArrowRight className="w-5 h-5 text-brand-500" />
                             </motion.div>
                           </div>
-                          
+
                           {/* Hover Glow Effect */}
                           <div className={`absolute inset-0 bg-gradient-to-r ${link.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none`} />
                         </StrategicLink>
