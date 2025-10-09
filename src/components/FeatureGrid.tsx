@@ -149,154 +149,122 @@ export function FeatureGrid() {
           })}
         </motion.div>
 
-        {/* Explore Your Benefits Section - Dynasty Mode */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.4 }}
-          className="mt-24 max-w-7xl mx-auto"
-        >
-          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-teal-500 via-emerald-400 to-cyan-400 shadow-[0_20px_60px_-15px_rgba(20,184,166,0.4)]">
-            {/* Light Mesh Background */}
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute inset-0 opacity-30"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
-                                   radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
-                                   radial-gradient(circle at 40% 20%, rgba(6, 182, 212, 0.3) 0%, transparent 50%)`
-                }}
-              />
-            </div>
-
-            <div className="relative z-10 p-8 md:p-12 lg:p-20">
-              {/* Header */}
-              <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm border border-white/40 rounded-full px-6 py-3 mb-8 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-                  <CheckCircle className="w-5 h-5 text-teal-900" />
-                  <span className="font-bold text-slate-900 tracking-wide">All benefits included in your membership</span>
-                  <Sparkles className="w-5 h-5 text-cyan-600" />
-                </div>
-
-                <h3 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 tracking-tight">
-                  <span className="text-white drop-shadow-lg">
-                    Explore Your
-                  </span>
-                  <br />
-                  <span className="text-slate-900 drop-shadow-md">
-                    Benefits
-                  </span>
-                </h3>
-                <p className="text-xl text-slate-900/80 max-w-2xl mx-auto font-medium drop-shadow-sm">
-                  Everything you need to know about your healthcare membership
-                </p>
-              </div>
-
-              {/* Benefits Grid - Enhanced Cards */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                {[
-                  {
-                    href: "/#pricing",
-                    title: "Membership Pricing",
-                    description: "Transparent pricing for all benefits",
-                    image: "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
-                    icon: CreditCard,
-                    gradient: "from-emerald-500 via-teal-500 to-cyan-500",
-                    glowColor: "emerald"
-                  },
-                  {
-                    href: "/#how-it-works",
-                    title: "Get Started",
-                    description: "Simple 3-step enrollment",
-                    image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
-                    icon: ArrowRight,
-                    gradient: "from-blue-500 via-cyan-500 to-sky-500",
-                    glowColor: "blue"
-                  },
-                  {
-                    href: "/#services",
-                    title: "Healthcare Services",
-                    description: "24/7 virtual care access",
-                    image: "https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
-                    icon: Heart,
-                    gradient: "from-rose-500 via-pink-500 to-fuchsia-500",
-                    glowColor: "rose"
-                  },
-                  {
-                    href: "/#faq",
-                    title: "FAQs",
-                    description: "Common questions answered",
-                    image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
-                    icon: Shield,
-                    gradient: "from-amber-500 via-orange-500 to-red-500",
-                    glowColor: "amber"
-                  }
-                ].map((item, i) => {
-                  const Icon = item.icon
-                  return (
-                    <div key={i} className="group">
-                      <StrategicLink
-                        href={item.href}
-                        variant="card"
-                        className="relative h-full block overflow-hidden rounded-3xl bg-white/30 backdrop-blur-xl border border-white/40 hover:border-white/60 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(255,255,255,0.5)] hover:scale-[1.03] hover:-translate-y-1"
-                      >
-                        {/* Image Background */}
-                        <div className="relative h-48 overflow-hidden">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            loading="lazy"
-                            decoding="async"
-                          />
-
-                          {/* Gradient Overlay */}
-                          <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-60 mix-blend-multiply group-hover:opacity-40 transition-opacity duration-300`} />
-
-                          {/* Light Bottom Fade */}
-                          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/80" />
-
-                          {/* Icon */}
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-20 h-20 rounded-2xl bg-white shadow-2xl flex items-center justify-center group-hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                              <Icon className={`w-10 h-10 bg-gradient-to-br ${item.gradient} bg-clip-text`} style={{ WebkitTextFillColor: 'transparent' }} />
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Content */}
-                        <div className="relative p-6 bg-white/90 backdrop-blur-sm">
-                          <h4 className="font-black text-slate-900 text-xl mb-3 group-hover:bg-gradient-to-r group-hover:from-teal-600 group-hover:to-cyan-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-200">
-                            {item.title}
-                          </h4>
-                          <p className="text-sm text-slate-700 leading-relaxed mb-4 group-hover:text-slate-800 transition-colors duration-200">
-                            {item.description}
-                          </p>
-
-                          {/* Learn More Button */}
-                          <div className="flex items-center gap-2 font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:translate-x-1">
-                            <span className={`bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
-                              Learn more
-                            </span>
-                            <ArrowRight className={`w-4 h-4 bg-gradient-to-r ${item.gradient} bg-clip-text`} style={{ WebkitTextFillColor: 'transparent' }} />
-                          </div>
-                        </div>
-
-                        {/* Glow Effect Border */}
-                        <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                      </StrategicLink>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-
-            {/* Static Light Orbs */}
-            <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-white/30 to-cyan-300/30 rounded-full blur-[100px]" />
-            <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-white/30 to-teal-300/30 rounded-full blur-[100px]" />
-            <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-emerald-300/20 to-white/20 rounded-full blur-[100px]" />
+        {/* Quick Access Navigation - Modern Redesign */}
+        <div className="mt-24 max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-200 text-teal-700 text-sm font-semibold mb-4">
+              <Sparkles className="w-4 h-4" />
+              Everything included in your plan
+            </span>
+            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-3">
+              Quick Access
+            </h3>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Jump to the information you need about your healthcare membership
+            </p>
           </div>
-        </motion.div>
+
+          {/* Cards Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                href: "/#pricing",
+                title: "Membership Pricing",
+                description: "Transparent pricing for all benefits",
+                icon: CreditCard,
+                color: "emerald"
+              },
+              {
+                href: "/#how-it-works",
+                title: "Get Started",
+                description: "Simple 3-step enrollment",
+                icon: ArrowRight,
+                color: "blue"
+              },
+              {
+                href: "/#services",
+                title: "Healthcare Services",
+                description: "24/7 virtual care access",
+                icon: Heart,
+                color: "rose"
+              },
+              {
+                href: "/#faq",
+                title: "FAQs",
+                description: "Common questions answered",
+                icon: Shield,
+                color: "amber"
+              }
+            ].map((item, i) => {
+              const Icon = item.icon
+              const colorClasses = {
+                emerald: {
+                  bg: "bg-emerald-50",
+                  border: "border-emerald-200",
+                  icon: "text-emerald-600",
+                  iconBg: "bg-emerald-100",
+                  hoverBg: "hover:bg-emerald-100",
+                  hoverBorder: "hover:border-emerald-300"
+                },
+                blue: {
+                  bg: "bg-blue-50",
+                  border: "border-blue-200",
+                  icon: "text-blue-600",
+                  iconBg: "bg-blue-100",
+                  hoverBg: "hover:bg-blue-100",
+                  hoverBorder: "hover:border-blue-300"
+                },
+                rose: {
+                  bg: "bg-rose-50",
+                  border: "border-rose-200",
+                  icon: "text-rose-600",
+                  iconBg: "bg-rose-100",
+                  hoverBg: "hover:bg-rose-100",
+                  hoverBorder: "hover:border-rose-300"
+                },
+                amber: {
+                  bg: "bg-amber-50",
+                  border: "border-amber-200",
+                  icon: "text-amber-600",
+                  iconBg: "bg-amber-100",
+                  hoverBg: "hover:bg-amber-100",
+                  hoverBorder: "hover:border-amber-300"
+                }
+              }[item.color]
+
+              return (
+                <StrategicLink
+                  key={i}
+                  href={item.href}
+                  variant="card"
+                  className={`group relative block rounded-2xl border-2 ${colorClasses.border} ${colorClasses.bg} ${colorClasses.hoverBg} ${colorClasses.hoverBorder} transition-all duration-200 hover:shadow-lg hover:-translate-y-1`}
+                >
+                  <div className="p-6">
+                    {/* Icon */}
+                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${colorClasses.iconBg} mb-4 transition-transform duration-200 group-hover:scale-110`}>
+                      <Icon className={`w-7 h-7 ${colorClasses.icon}`} />
+                    </div>
+
+                    {/* Content */}
+                    <h4 className="text-xl font-bold text-slate-900 mb-2">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      {item.description}
+                    </p>
+
+                    {/* Arrow */}
+                    <div className={`flex items-center gap-1 text-sm font-semibold ${colorClasses.icon} group-hover:translate-x-1 transition-transform duration-200`}>
+                      <span>View details</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </div>
+                </StrategicLink>
+              )
+            })}
+          </div>
+        </div>
       </div>
     </section>
   )
