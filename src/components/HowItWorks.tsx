@@ -121,31 +121,10 @@ export function HowItWorks() {
             <span className="text-slate-700">in just 3 simple steps</span>
           </h2>
           
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            Getting started with Essentials is incredibly simple. From enrollment to savings, 
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Getting started with Essentials is incredibly simple. From enrollment to savings,
             we've streamlined everything so you can focus on what matters most - your health.
           </p>
-
-          {/* Play Demo Button */}
-          <motion.button
-            onClick={() => setIsPlaying(!isPlaying)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`inline-flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
-              isPlaying 
-                ? 'bg-red-500 text-white shadow-lg hover:bg-red-600' 
-                : 'bg-brand-500 text-white shadow-lg hover:bg-brand-600'
-            }`}
-          >
-            <Play className={`w-5 h-5 ${isPlaying ? 'hidden' : 'block'}`} />
-            <div className={`w-5 h-5 ${isPlaying ? 'block' : 'hidden'}`}>
-              <div className="flex gap-1">
-                <div className="w-1.5 h-5 bg-white rounded-full"></div>
-                <div className="w-1.5 h-5 bg-white rounded-full"></div>
-              </div>
-            </div>
-            {isPlaying ? 'Pause Demo' : 'Play Demo'}
-          </motion.button>
         </motion.div>
 
         {/* Process Flow Timeline */}
