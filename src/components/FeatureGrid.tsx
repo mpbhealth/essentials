@@ -244,7 +244,7 @@ export function FeatureGrid() {
                     href: "/#pricing",
                     title: "Membership Pricing",
                     description: "Transparent pricing for all benefits",
-                    image: "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    image: "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
                     icon: CreditCard,
                     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
                     glowColor: "emerald"
@@ -253,7 +253,7 @@ export function FeatureGrid() {
                     href: "/#how-it-works",
                     title: "Get Started",
                     description: "Simple 3-step enrollment",
-                    image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
                     icon: ArrowRight,
                     gradient: "from-blue-500 via-cyan-500 to-sky-500",
                     glowColor: "blue"
@@ -262,7 +262,7 @@ export function FeatureGrid() {
                     href: "/#services",
                     title: "Healthcare Services",
                     description: "24/7 virtual care access",
-                    image: "https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    image: "https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
                     icon: Heart,
                     gradient: "from-rose-500 via-pink-500 to-fuchsia-500",
                     glowColor: "rose"
@@ -271,7 +271,7 @@ export function FeatureGrid() {
                     href: "/#faq",
                     title: "FAQs",
                     description: "Common questions answered",
-                    image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800",
+                    image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1",
                     icon: Shield,
                     gradient: "from-amber-500 via-orange-500 to-red-500",
                     glowColor: "amber"
@@ -305,6 +305,8 @@ export function FeatureGrid() {
                             src={item.image}
                             alt={item.title}
                             className="w-full h-full object-cover"
+                            loading="lazy"
+                            decoding="async"
                           />
 
                           {/* Gradient Overlay */}
@@ -329,22 +331,7 @@ export function FeatureGrid() {
                             </motion.div>
                           </motion.div>
 
-                          {/* Shine Effect on Hover */}
-                          <motion.div
-                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                            style={{
-                              background: 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%)',
-                              backgroundSize: '200% 200%',
-                            }}
-                            animate={{
-                              backgroundPosition: ['200% 0%', '-200% 0%']
-                            }}
-                            transition={{
-                              duration: 1.5,
-                              repeat: Infinity,
-                              repeatDelay: 1
-                            }}
-                          />
+                          {/* Shine Effect on Hover - Disabled for performance */}
                         </div>
 
                         {/* Content */}
