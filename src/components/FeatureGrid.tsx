@@ -149,45 +149,66 @@ export function FeatureGrid() {
           })}
         </motion.div>
 
-        {/* Explore Your Benefits Section */}
+        {/* Explore Your Benefits Section - Championship Redesign */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-20 max-w-6xl mx-auto"
+          className="mt-24 max-w-7xl mx-auto"
         >
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 shadow-2xl">
-            {/* Animated Background */}
-            <div className="absolute inset-0">
+          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] border border-white/5">
+            {/* Animated Mesh Background */}
+            <div className="absolute inset-0 overflow-hidden">
               <motion.div
                 animate={{
                   backgroundPosition: ['0% 0%', '100% 100%'],
-                  opacity: [0.3, 0.5, 0.3]
                 }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 bg-gradient-to-br from-brand-500/20 via-transparent to-accent-500/20"
-                style={{ backgroundSize: '200% 200%' }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 opacity-30"
+                style={{
+                  backgroundImage: `radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                                   radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                                   radial-gradient(circle at 40% 20%, rgba(251, 146, 60, 0.15) 0%, transparent 50%)`,
+                  backgroundSize: '200% 200%'
+                }}
+              />
+
+              {/* Grid Pattern */}
+              <div className="absolute inset-0 opacity-[0.02]"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                                   linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+                  backgroundSize: '50px 50px'
+                }}
               />
             </div>
 
-            <div className="relative z-10 p-8 md:p-12 lg:p-16">
+            <div className="relative z-10 p-8 md:p-12 lg:p-20">
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-16">
                 <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
+                  initial={{ scale: 0.8, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-6"
+                  transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full px-6 py-3 mb-8 shadow-[0_0_30px_rgba(16,185,129,0.2)]"
                 >
-                  <CheckCircle className="w-5 h-5 text-accent-400" />
-                  <span className="font-bold text-white">All benefits included in your membership</span>
                   <motion.div
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                   >
-                    <Sparkles className="w-5 h-5 text-yellow-300" />
+                    <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  </motion.div>
+                  <span className="font-bold text-white tracking-wide">All benefits included in your membership</span>
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      rotate: [0, 180, 360]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  >
+                    <Sparkles className="w-5 h-5 text-yellow-400" />
                   </motion.div>
                 </motion.div>
 
@@ -195,115 +216,165 @@ export function FeatureGrid() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4"
+                  className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 tracking-tight"
                 >
-                  Explore Your Benefits
+                  <span className="bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
+                    Explore Your
+                  </span>
+                  <br />
+                  <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                    Benefits
+                  </span>
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="text-lg text-slate-300 max-w-2xl mx-auto"
+                  className="text-xl text-slate-400 max-w-2xl mx-auto font-light"
                 >
                   Everything you need to know about your healthcare membership
                 </motion.p>
               </div>
 
-              {/* Benefits Grid */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+              {/* Benefits Grid - Enhanced Cards */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                 {[
                   {
                     href: "/#pricing",
                     title: "Membership Pricing",
                     description: "Transparent pricing for all benefits",
-                    image: "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    image: "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800",
                     icon: CreditCard,
-                    gradient: "from-emerald-400 to-teal-500"
+                    gradient: "from-emerald-500 via-teal-500 to-cyan-500",
+                    glowColor: "emerald"
                   },
                   {
                     href: "/#how-it-works",
                     title: "Get Started",
                     description: "Simple 3-step enrollment",
-                    image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
                     icon: ArrowRight,
-                    gradient: "from-blue-400 to-cyan-500"
+                    gradient: "from-blue-500 via-cyan-500 to-sky-500",
+                    glowColor: "blue"
                   },
                   {
                     href: "/#services",
                     title: "Healthcare Services",
                     description: "24/7 virtual care access",
-                    image: "https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    image: "https://images.pexels.com/photos/4167541/pexels-photo-4167541.jpeg?auto=compress&cs=tinysrgb&w=800",
                     icon: Heart,
-                    gradient: "from-rose-400 to-pink-500"
+                    gradient: "from-rose-500 via-pink-500 to-fuchsia-500",
+                    glowColor: "rose"
                   },
                   {
                     href: "/#faq",
                     title: "FAQs",
                     description: "Common questions answered",
-                    image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=600",
+                    image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=800",
                     icon: Shield,
-                    gradient: "from-amber-400 to-orange-500"
+                    gradient: "from-amber-500 via-orange-500 to-red-500",
+                    glowColor: "amber"
                   }
                 ].map((item, i) => {
                   const Icon = item.icon
                   return (
                     <motion.div
                       key={i}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: i * 0.15,
+                        type: "spring",
+                        stiffness: 80
+                      }}
                       className="group"
                     >
                       <StrategicLink
                         href={item.href}
                         variant="card"
-                        className="relative h-full overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 group-hover:shadow-2xl group-hover:scale-105"
+                        className="relative h-full overflow-hidden rounded-3xl bg-slate-900/50 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-500 group-hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] group-hover:scale-[1.02] group-hover:-translate-y-2"
                       >
-                        {/* Image Background */}
-                        <div className="relative h-32 overflow-hidden">
-                          <img
+                        {/* Image Background with Parallax */}
+                        <div className="relative h-48 overflow-hidden">
+                          <motion.img
+                            whileHover={{ scale: 1.15 }}
+                            transition={{ duration: 0.7, ease: "easeOut" }}
                             src={item.image}
                             alt={item.title}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            className="w-full h-full object-cover"
                           />
-                          <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-60 group-hover:opacity-40 transition-opacity duration-300`} />
 
-                          {/* Icon Overlay */}
-                          <div className="absolute inset-0 flex items-center justify-center">
+                          {/* Gradient Overlay */}
+                          <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-70 mix-blend-multiply group-hover:opacity-50 transition-opacity duration-500`} />
+
+                          {/* Dark Bottom Fade */}
+                          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/90" />
+
+                          {/* Animated Icon */}
+                          <motion.div
+                            className="absolute inset-0 flex items-center justify-center"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: i * 0.15 + 0.3 }}
+                          >
                             <motion.div
-                              whileHover={{ scale: 1.2, rotate: 360 }}
-                              transition={{ duration: 0.6 }}
-                              className="w-16 h-16 rounded-xl bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center"
+                              whileHover={{ scale: 1.15, rotate: 5 }}
+                              transition={{ duration: 0.4, type: "spring", stiffness: 200 }}
+                              className={`w-20 h-20 rounded-2xl bg-white/95 backdrop-blur-sm shadow-2xl flex items-center justify-center group-hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-shadow duration-500`}
                             >
-                              <Icon className={`w-8 h-8 bg-gradient-to-br ${item.gradient} bg-clip-text text-transparent`} style={{ WebkitTextFillColor: 'transparent', backgroundClip: 'text' }} />
+                              <Icon className={`w-10 h-10 bg-gradient-to-br ${item.gradient} bg-clip-text`} style={{ WebkitTextFillColor: 'transparent' }} />
                             </motion.div>
-                          </div>
+                          </motion.div>
+
+                          {/* Shine Effect on Hover */}
+                          <motion.div
+                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                            style={{
+                              background: 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%)',
+                              backgroundSize: '200% 200%',
+                            }}
+                            animate={{
+                              backgroundPosition: ['200% 0%', '-200% 0%']
+                            }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              repeatDelay: 1
+                            }}
+                          />
                         </div>
 
                         {/* Content */}
-                        <div className="p-5">
-                          <h4 className="font-black text-white text-lg mb-2 group-hover:text-accent-300 transition-colors">
+                        <div className="relative p-6 bg-gradient-to-b from-slate-900/80 to-slate-950/95">
+                          <h4 className="font-black text-white text-xl mb-3 group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-300 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                             {item.title}
                           </h4>
-                          <p className="text-sm text-slate-300 leading-relaxed">
+                          <p className="text-sm text-slate-400 leading-relaxed mb-4 group-hover:text-slate-300 transition-colors duration-300">
                             {item.description}
                           </p>
 
-                          {/* Hover Arrow */}
+                          {/* Learn More Button */}
                           <motion.div
-                            initial={{ x: -10, opacity: 0 }}
-                            whileHover={{ x: 0, opacity: 1 }}
-                            className="mt-4 flex items-center gap-2 text-accent-300 font-semibold text-sm"
+                            initial={{ opacity: 0, y: 10 }}
+                            whileHover={{ opacity: 1, y: 0, x: 5 }}
+                            className="flex items-center gap-2 text-white font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300"
                           >
-                            <span>Learn more</span>
-                            <ArrowRight className="w-4 h-4" />
+                            <span className={`bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
+                              Learn more
+                            </span>
+                            <ArrowRight className={`w-4 h-4 bg-gradient-to-r ${item.gradient} bg-clip-text`} style={{ WebkitTextFillColor: 'transparent' }} />
                           </motion.div>
                         </div>
 
-                        {/* Glow Effect */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none`} />
+                        {/* Glow Effect Border */}
+                        <div className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}
+                          style={{
+                            background: `linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)`,
+                          }}
+                        />
                       </StrategicLink>
                     </motion.div>
                   )
@@ -311,16 +382,33 @@ export function FeatureGrid() {
               </div>
             </div>
 
-            {/* Decorative Elements */}
+            {/* Floating Orbs - Enhanced */}
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-brand-400 to-accent-500 rounded-full blur-3xl opacity-20"
+              animate={{
+                x: [0, 100, 0],
+                y: [0, -50, 0],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-emerald-500/30 to-teal-500/30 rounded-full blur-[100px]"
             />
             <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-br from-accent-400 to-brand-500 rounded-full blur-3xl opacity-20"
+              animate={{
+                x: [0, -80, 0],
+                y: [0, 60, 0],
+                scale: [1, 1.3, 1]
+              }}
+              transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 rounded-full blur-[100px]"
+            />
+            <motion.div
+              animate={{
+                x: [0, -60, 0],
+                y: [0, -80, 0],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+              className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-full blur-[100px]"
             />
           </div>
         </motion.div>
