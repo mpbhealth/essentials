@@ -157,14 +157,14 @@ export function FeatureGrid() {
           transition={{ duration: 0.4 }}
           className="mt-24 max-w-7xl mx-auto"
         >
-          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] border border-white/5">
-            {/* Static Mesh Background */}
+          <div className="relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-teal-500 via-emerald-400 to-cyan-400 shadow-[0_20px_60px_-15px_rgba(20,184,166,0.4)]">
+            {/* Light Mesh Background */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute inset-0 opacity-20"
+              <div className="absolute inset-0 opacity-30"
                 style={{
-                  backgroundImage: `radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
-                                   radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
-                                   radial-gradient(circle at 40% 20%, rgba(251, 146, 60, 0.15) 0%, transparent 50%)`
+                  backgroundImage: `radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+                                   radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                                   radial-gradient(circle at 40% 20%, rgba(6, 182, 212, 0.3) 0%, transparent 50%)`
                 }}
               />
             </div>
@@ -172,22 +172,22 @@ export function FeatureGrid() {
             <div className="relative z-10 p-8 md:p-12 lg:p-20">
               {/* Header */}
               <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full px-6 py-3 mb-8 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
-                  <span className="font-bold text-white tracking-wide">All benefits included in your membership</span>
-                  <Sparkles className="w-5 h-5 text-yellow-400" />
+                <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm border border-white/40 rounded-full px-6 py-3 mb-8 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                  <CheckCircle className="w-5 h-5 text-teal-900" />
+                  <span className="font-bold text-slate-900 tracking-wide">All benefits included in your membership</span>
+                  <Sparkles className="w-5 h-5 text-cyan-600" />
                 </div>
 
-                <h3 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 tracking-tight">
-                  <span className="bg-gradient-to-r from-white via-slate-200 to-white bg-clip-text text-transparent">
+                <h3 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 tracking-tight">
+                  <span className="text-white drop-shadow-lg">
                     Explore Your
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                  <span className="text-slate-900 drop-shadow-md">
                     Benefits
                   </span>
                 </h3>
-                <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light">
+                <p className="text-xl text-slate-900/80 max-w-2xl mx-auto font-medium drop-shadow-sm">
                   Everything you need to know about your healthcare membership
                 </p>
               </div>
@@ -238,7 +238,7 @@ export function FeatureGrid() {
                       <StrategicLink
                         href={item.href}
                         variant="card"
-                        className="relative h-full block overflow-hidden rounded-3xl bg-slate-900/50 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] hover:scale-[1.03] hover:-translate-y-1"
+                        className="relative h-full block overflow-hidden rounded-3xl bg-white/30 backdrop-blur-xl border border-white/40 hover:border-white/60 transition-all duration-300 hover:shadow-[0_20px_60px_-15px_rgba(255,255,255,0.5)] hover:scale-[1.03] hover:-translate-y-1"
                       >
                         {/* Image Background */}
                         <div className="relative h-48 overflow-hidden">
@@ -251,30 +251,30 @@ export function FeatureGrid() {
                           />
 
                           {/* Gradient Overlay */}
-                          <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-70 mix-blend-multiply group-hover:opacity-50 transition-opacity duration-300`} />
+                          <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-60 mix-blend-multiply group-hover:opacity-40 transition-opacity duration-300`} />
 
-                          {/* Dark Bottom Fade */}
-                          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/90" />
+                          {/* Light Bottom Fade */}
+                          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/80" />
 
                           {/* Icon */}
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-20 h-20 rounded-2xl bg-white/95 backdrop-blur-sm shadow-2xl flex items-center justify-center group-hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                            <div className="w-20 h-20 rounded-2xl bg-white shadow-2xl flex items-center justify-center group-hover:shadow-[0_0_40px_rgba(255,255,255,0.6)] group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                               <Icon className={`w-10 h-10 bg-gradient-to-br ${item.gradient} bg-clip-text`} style={{ WebkitTextFillColor: 'transparent' }} />
                             </div>
                           </div>
                         </div>
 
                         {/* Content */}
-                        <div className="relative p-6 bg-gradient-to-b from-slate-900/80 to-slate-950/95">
-                          <h4 className="font-black text-white text-xl mb-3 group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-300 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-200">
+                        <div className="relative p-6 bg-white/90 backdrop-blur-sm">
+                          <h4 className="font-black text-slate-900 text-xl mb-3 group-hover:bg-gradient-to-r group-hover:from-teal-600 group-hover:to-cyan-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-200">
                             {item.title}
                           </h4>
-                          <p className="text-sm text-slate-400 leading-relaxed mb-4 group-hover:text-slate-300 transition-colors duration-200">
+                          <p className="text-sm text-slate-700 leading-relaxed mb-4 group-hover:text-slate-800 transition-colors duration-200">
                             {item.description}
                           </p>
 
                           {/* Learn More Button */}
-                          <div className="flex items-center gap-2 text-white font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:translate-x-1">
+                          <div className="flex items-center gap-2 font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:translate-x-1">
                             <span className={`bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
                               Learn more
                             </span>
@@ -283,7 +283,7 @@ export function FeatureGrid() {
                         </div>
 
                         {/* Glow Effect Border */}
-                        <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+                        <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                       </StrategicLink>
                     </div>
                   )
@@ -291,10 +291,10 @@ export function FeatureGrid() {
               </div>
             </div>
 
-            {/* Static Orbs - Performance Optimized */}
-            <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-full blur-[100px]" />
-            <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-[100px]" />
-            <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-orange-500/15 to-amber-500/15 rounded-full blur-[100px]" />
+            {/* Static Light Orbs */}
+            <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-white/30 to-cyan-300/30 rounded-full blur-[100px]" />
+            <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-br from-white/30 to-teal-300/30 rounded-full blur-[100px]" />
+            <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-emerald-300/20 to-white/20 rounded-full blur-[100px]" />
           </div>
         </motion.div>
       </div>
