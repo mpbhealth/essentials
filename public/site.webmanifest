@@ -1,0 +1,21 @@
+{
+  "name": "MPB Health Essentials",
+  "short_name": "MPB Essentials",
+  "description": "Premium Virtual Care & Concierge Services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a4e8e",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
