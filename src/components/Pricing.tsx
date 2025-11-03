@@ -10,7 +10,7 @@ import { DollarSign, Shield, Clock, Heart, Zap, CircleCheck as CheckCircle, Tren
 export function Pricing() {
   const [totalSavings, setTotalSavings] = useState(0)
   const [selectedPlan, setSelectedPlan] = useState(pricing.plans[0].id)
-  const href = 'https://www.1enrollment.com/order/checkout.cfm?id=768413&pdid=42463'
+  const baseEnrollmentUrl = 'https://essentials.enrollmpb.com/'
 
   useEffect(() => {
     // Animate total savings counter
@@ -215,16 +215,16 @@ export function Pricing() {
                       </div>
 
                       {/* CTA Button */}
-                      <motion.a 
-                        href={href} 
+                      <motion.a
+                        href={`${baseEnrollmentUrl}?benefitid=${plan.benefitId}`}
                         onClick={() => enrollClick(`pricing_${plan.id}`)}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                         className="group/btn block mb-4"
                       >
                         <Button className={`w-full text-lg py-4 shadow-lg hover:shadow-2xl transition-all duration-300 ${
-                          isPopular 
-                            ? 'bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700' 
+                          isPopular
+                            ? 'bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700'
                             : 'bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700'
                         }`}>
                           <span className="flex items-center justify-center gap-2">
